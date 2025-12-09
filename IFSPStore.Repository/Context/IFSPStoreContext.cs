@@ -1,7 +1,7 @@
 ﻿using IFSPStore.Domain.Entities;
 using IFSPStore.Repository.Mapping;
 using Microsoft.EntityFrameworkCore;
-using static IFSPStore.Repository.Mapping.SaleMap;
+using static IFSPStore.Repository.Mapping.LocacaoMap;
 
 namespace IFSPStore.Repository.Context
 {
@@ -21,7 +21,7 @@ namespace IFSPStore.Repository.Context
         public DbSet<Carro> Products { get; set; }
         public DbSet<Cliente> Customers { get; set; }
         public DbSet<Locacao> Sales { get; set; }
-        public DbSet<SaleItem> SalesItens { get; set; }
+        public DbSet<CarrosAlugados> SalesItens { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -29,8 +29,8 @@ namespace IFSPStore.Repository.Context
             modelBuilder.Entity<Cidade>(new CidadeMap().Configure);
             modelBuilder.Entity<Cliente>(new ClienteMap().Configure);
             modelBuilder.Entity<Carro>(new CarroMap().Configure);
-            modelBuilder.Entity<Locacao>(new SaleMap().Configure);
-            modelBuilder.Entity<SaleItem>(new SaleItemMap().Configure);
+            modelBuilder.Entity<Locacao>(new LocacaoMap().Configure);
+            modelBuilder.Entity<CarrosAlugados>(new CarrosAlugadosMap().Configure);
             modelBuilder.Entity<Funcionario>(new FuncionarioMap().Configure);
         }
 

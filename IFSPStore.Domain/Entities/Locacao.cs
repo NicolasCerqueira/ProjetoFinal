@@ -9,8 +9,8 @@ namespace IFSPStore.Domain.Entities
         {
             CarrosAlugados = new List<CarrosAlugados>();
         }
-        public Locacao(int id, DateTime dataLocacao, DateTime dataDevolucao,decimal valorTotal, 
-            int numDiarias, Funcionario funcionario, Cliente cliente) 
+        public Locacao(int id, DateTime dataLocacao, DateTime dataDevolucao, decimal valorTotal,
+            int numDiarias, Funcionario funcionario, Cliente cliente)
             : base(id)
         {
             DataLocacao = dataLocacao;
@@ -35,9 +35,11 @@ namespace IFSPStore.Domain.Entities
 
     public class CarrosAlugados : BaseEntity<int>
     {
-        public class Locacao : BaseEntity<int>
-        {
-            public Locacao(int id, Locacao? locacao, Carro? carro,
+            public CarrosAlugados()
+            {
+                
+            }
+            public CarrosAlugados(int id, Locacao? locacao, Carro? carro,
                 decimal valorDiaria, decimal valorTotalLoc) : base(id)
             {
                 Locacao_ = locacao;
@@ -52,6 +54,6 @@ namespace IFSPStore.Domain.Entities
             public virtual Carro? Carro { get; set; }
             public decimal ValorDiaria { get; set; }
             public decimal ValorTotalLoc { get; set; }  // (ValorDiaria * Dias)
-        }
+        
     }
 }

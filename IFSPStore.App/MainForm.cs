@@ -26,13 +26,13 @@ namespace IFSPStore.App
                 }
                 else
                 {
-                    lblUser.Text = $"Usuário: {User?.Name}";
+                    lblUser.Text = $"Usuário: {User?.Nome}";
                 }
             }
         }
         private void categorytoolStripMenuItem_Click(object sender, EventArgs e)
         {
-            showForm<CategoryForm>();
+            showForm<CategoriaForm>();
         }
         void productToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -48,7 +48,7 @@ namespace IFSPStore.App
         }
         private void cityToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            showForm<CityForm>();
+            showForm<CidadeForm>();
         }
         private void userToolStripMenuItem_Click(object sender, EventArgs e)
         {

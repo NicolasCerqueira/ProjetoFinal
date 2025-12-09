@@ -11,7 +11,7 @@ namespace IFSPStore.App.Cadastros
         private readonly IBaseService<Carro> _productService;
         private readonly IBaseService<Categoria> _categoryService;
 
-        private List<ProductModel>? products;
+        private List<Models.testeModel>? products;
         public ProductForm(IBaseService<Carro> productService, IBaseService<Categoria> categoryService)
         {
             _productService = productService;
@@ -24,7 +24,7 @@ namespace IFSPStore.App.Cadastros
         {
             cboCategory.ValueMember = "Id";
             cboCategory.DisplayMember = "Name";
-            cboCategory.DataSource = _categoryService.Get<CategoryModel>().ToList();
+            cboCategory.DataSource = _categoryService.Get<CategoriaModel>().ToList();
         }
 
         private void PreencheObject(Carro product)
@@ -99,7 +99,7 @@ namespace IFSPStore.App.Cadastros
 
         protected override void CarregaGrid()
         {
-            products = _productService.Get<ProductModel>(new[] { "Category" }).ToList();
+            products = _productService.Get<Locacao>(new[] { "Category" }).ToList();
             dataGridViewList.DataSource = products;
             dataGridViewList.Columns["IdCategory"]!.Visible = false;
         }

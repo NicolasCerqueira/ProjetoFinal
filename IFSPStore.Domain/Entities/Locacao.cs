@@ -31,13 +31,14 @@ namespace IFSPStore.Domain.Entities
         public Funcionario? Funcionario { get; set; }
         public int ClienteId { get; set; }
         public Cliente? Cliente { get; set; }
-
         public List<CarrosAlugados> CarrosAlugados { get; set; }
     }
     public class CarrosAlugados : BaseEntity<int>
     {
-        public CarrosAlugados() { }
+        public CarrosAlugados() 
+        {
 
+        }
         public int LocacaoId { get; set; }
         public virtual Locacao? Locacao_ { get; set; }
         public int CarroId { get; set; }

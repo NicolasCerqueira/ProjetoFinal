@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace IFSPStore.App.Models
 {
-    public class CityModel
+    public class CidadeModel
     {
         public int Id { get; set; }
-        public string? Name { get; set; }
-        public string? State { get; set; }
-        public string? districtName { get; set; }
+        public string? Nome { get; set; }
+        public string? Estado { get; set; }
     }
 }

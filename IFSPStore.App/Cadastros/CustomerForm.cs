@@ -12,7 +12,7 @@ namespace IFSPStore.App.Cadastros
         private readonly IBaseService<Cliente> _customerService;
         private readonly IBaseService<Cidade> _cityService;
 
-        private List<CustomerModel>? customers;
+        private List<ClienteModel>? customers;
         public CustomerForm(IBaseService<Cliente> clienteService, IBaseService<Cidade> cidadeService)
         {
             _customerService = clienteService;
@@ -24,7 +24,7 @@ namespace IFSPStore.App.Cadastros
         {
             cboCity.ValueMember = "Id";
             cboCity.DisplayMember = "Name";
-            cboCity.DataSource = _cityService.Get<CityModel>().ToList();
+            cboCity.DataSource = _cityService.Get<CidadeModel>().ToList();
         }
         private void preencheObject(Cliente customer)
         {
@@ -78,7 +78,7 @@ namespace IFSPStore.App.Cadastros
         }
         protected override void CarregaGrid()
         {
-            customers = _customerService.Get<CustomerModel>(new[] { "City" }).ToList();
+            customers = _customerService.Get<ClienteModel>(new[] { "City" }).ToList();
             dataGridViewList.DataSource = customers;
             dataGridViewList.Columns["Name"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridViewList.Columns["IdCity"]!.Visible = false;

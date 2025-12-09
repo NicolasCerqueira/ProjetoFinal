@@ -36,8 +36,8 @@ namespace IFSPStore.App.Infra
             services.AddScoped<IBaseRepository<Cidade>, BaseRepository<Cidade>>();
             services.AddScoped<IBaseRepository<Cliente>, BaseRepository<Cliente>>();
             services.AddScoped<IBaseRepository<Carro>, BaseRepository<Carro>>();
-            services.AddScoped<IBaseRepository<Locacao>, BaseRepository<Locacao>>();
-            services.AddScoped<IBaseRepository<SaleItem>, BaseRepository<SaleItem>>();
+            services.AddScoped<IBaseRepository<Domain.Entities.Locacao>, BaseRepository<Domain.Entities.Locacao>>();
+            services.AddScoped<IBaseRepository<CarrosAlugados>, BaseRepository<CarrosAlugados>>();
 
             // Services
             services.AddScoped<IBaseService<Categoria>, BaseService<Categoria>>();
@@ -45,13 +45,13 @@ namespace IFSPStore.App.Infra
             services.AddScoped<IBaseService<Cidade>, BaseService<Cidade>>();
             services.AddScoped<IBaseService<Cliente>, BaseService<Cliente>>();
             services.AddScoped<IBaseService<Carro>, BaseService<Carro>>();
-            services.AddScoped<IBaseService<Locacao>, BaseService<Locacao>>();
-            services.AddScoped<IBaseService<SaleItem>, BaseService<SaleItem>>();
+            services.AddScoped<IBaseService<Domain.Entities.Locacao>, BaseService<Domain.Entities.Locacao>>();
+            services.AddScoped<IBaseService<CarrosAlugados>, BaseService<CarrosAlugados>>();
 
             //Formularios
             services.AddTransient<Login, Login>();
-            services.AddTransient<CategoryForm, CategoryForm>();
-            services.AddTransient<CityForm, CityForm>();
+            services.AddTransient<CategoriaForm, CategoriaForm>();
+            services.AddTransient<CidadeForm, CidadeForm>();
             services.AddTransient<CustomerForm, CustomerForm>();
             services.AddTransient<ProductForm, ProductForm>();
             services.AddTransient<SaleForm, SaleForm>();
@@ -60,23 +60,12 @@ namespace IFSPStore.App.Infra
 
             services.AddSingleton(
                 new MapperConfiguration(config => {
-                    config.CreateMap<Categoria, CategoryModel>();
-                    config.CreateMap<Funcionario, UserModel>();
-                    config.CreateMap<Carro, ProductModel>()
-                        .ForMember(d => d.Category, d => d.MapFrom(x => x.Category!.Name))
-                        .ForMember(d => d.IdCategory, d => d.MapFrom(x => x.CategoryId));
-                    config.CreateMap<Cliente, CustomerModel>()
-                        .ForMember(d => d.Name, d => d.MapFrom(x => x.Nome))
-                        .ForMember(d => d.Document, d => d.MapFrom(x => x.DocumentId))
-                        .ForMember(d => d.City, d => d.MapFrom(x => x.City!.Name))
-                        .ForMember(d => d.IdCity, d => d.MapFrom(x => x.CityId));
-                    config.CreateMap<Cidade, CityModel>();
-                    config.CreateMap<Locacao, SaleModel>()
-                        .ForMember(d => d.User, d => d.MapFrom(x => x.Salesman.Name)) // Mapeia nome do vendedor
-                        .ForMember(d => d.IdUser, d => d.MapFrom(x => x.Salesman!.Id))
-                        .ForMember(d => d.Customer, d => d.MapFrom(x => x.Customer.Nome)) // Mapeia nome do cliente
-                        .ForMember(d => d.IdCustomer, d => d.MapFrom(x => x.Customer!.Id))
-                        .ForMember(d => d.Quantity, d => d.MapFrom(x => x.SaleItens.Sum(s => s.Quantity)));
+                    config.CreateMap<Categoria, CategoriaModel>();
+                    config.CreateMap<Funcionario, FuncionarioModel>();
+                    config.CreateMap<Carro, CarroModel>();
+                    config.CreateMap<Cliente, ClienteModel>();
+                    config.CreateMap<Cidade, CidadeModel>();
+                    config.CreateMap<Locacao, LocacaoModel>();
 
                     config.CreateMap<Funcionario, Funcionario>();        
                     config.CreateMap<Categoria, Categoria>(); 
@@ -84,7 +73,8 @@ namespace IFSPStore.App.Infra
                     config.CreateMap<Cliente, Cliente>(); 
                     config.CreateMap<Cidade, Cidade>();         
                     config.CreateMap<Locacao, Locacao>();         
-                    config.CreateMap<SaleItem, SaleItem>();
+                    config.CreateMap<Locacao, Locacao>();
+                    config.CreateMap<CarrosAlugados, CarrosAlugados>();
                 },
                 NullLoggerFactory.Instance).CreateMapper());
             serviceProvider = services.BuildServiceProvider();

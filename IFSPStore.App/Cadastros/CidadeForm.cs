@@ -4,19 +4,19 @@ using IFSPStore.Domain.Entities;
 using IFSPStore.Service.Validator;
 namespace IFSPStore.App.Cadastros
 {
-    public partial class CityForm : BaseForm
+    public partial class CidadeForm : BaseForm
     {
         private IBaseService<Cidade> _cityService;
         private List<Cidade> cities;
-        public CityForm(IBaseService<Cidade> cityService)
+        public CidadeForm(IBaseService<Cidade> cityService)
         {
             _cityService = cityService;
             InitializeComponent();
         }
         private void preencheObject(Cidade city)
         {
-            city.Name = txtName.Text;
-            city.State = cboDistrict.Text;
+            city.Nome = txtNome.Text;
+            city.Estado = cboEstado.Text;
         }
         protected override void Save()
         {
@@ -69,8 +69,8 @@ namespace IFSPStore.App.Cadastros
         {
             //aqui deve estar do mesmo jeito que o nome das colunas do datagridview
             txtId.Text = linha?.Cells["Id"].Value.ToString();
-            txtName.Text = linha?.Cells["Name"].Value.ToString();
-            cboDistrict.Text = linha?.Cells["State"].Value.ToString();
+            txtNome.Text = linha?.Cells["Name"].Value.ToString();
+            cboEstado.Text = linha?.Cells["State"].Value.ToString();
         }
     }
 }

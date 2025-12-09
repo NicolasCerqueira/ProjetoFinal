@@ -6,19 +6,19 @@ using IFSPStore.Service.Validator;
 
 namespace IFSPStore.App.Cadastros
 {
-    public partial class CategoryForm : BaseForm
+    public partial class CategoriaForm : BaseForm
     {
         private readonly IBaseService<Categoria> _categoryService;
-        private List<CategoryModel>? categories;
-        public CategoryForm(IBaseService<Categoria> categoryService)
+        private List<CategoriaModel>? categories;
+        public CategoriaForm(IBaseService<Categoria> categoryService)
         {
             _categoryService = categoryService;
             InitializeComponent();
         }
         private void FormToObject(Categoria category)
         {
-            category.Name = txtName.Text;
-            category.Description = txtDescription.Text;
+            category.Nome = txtNome.Text;
+            category.Descricao = txtDescrição.Text;
         }
         protected override void Save()
         {
@@ -59,7 +59,7 @@ namespace IFSPStore.App.Cadastros
         {
             try
             {
-                categories = _categoryService.Get<CategoryModel>().ToList();
+                categories = _categoryService.Get<CategoriaModel>().ToList();
                 dataGridViewList.DataSource = categories;
                 dataGridViewList.Columns["Name"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
@@ -72,8 +72,8 @@ namespace IFSPStore.App.Cadastros
         protected override void GridToForm(DataGridViewRow? record)
         {
             txtId.Text = record?.Cells["Id"].Value.ToString();
-            txtName.Text = record?.Cells["Name"].Value.ToString();
-            txtDescription.Text = record?.Cells["Description"].Value.ToString();
+            txtNome.Text = record?.Cells["Name"].Value.ToString();
+            txtDescrição.Text = record?.Cells["Description"].Value.ToString();
         }
     }
 }

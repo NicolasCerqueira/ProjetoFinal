@@ -136,11 +136,11 @@ namespace IFSPStore.App.Base
         {
             if (tabControlRegister.SelectedIndex == 0) 
             {
-                this.AcceptButton = btnSave;
+                this.AcceptButton = btnSalvar;
             }
             else 
             {
-                this.AcceptButton = btnNew;
+                this.AcceptButton = btnNovo;
             }
         }
 

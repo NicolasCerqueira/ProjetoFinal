@@ -9,7 +9,7 @@ namespace IFSPStore.App.Cadastros
     public partial class UserForm : BaseForm
     {
         private readonly IBaseService<Funcionario> _userService;
-        private List<UserModel>? users;
+        private List<FuncionarioModel>? users;
         public UserForm(IBaseService<Funcionario> userService)
         {
             _userService = userService;
@@ -81,7 +81,7 @@ namespace IFSPStore.App.Cadastros
 
         protected override void CarregaGrid()
         {
-            users = _userService.Get<UserModel>().ToList();
+            users = _userService.Get<FuncionarioModel>().ToList();
             dataGridViewList.DataSource = users;
             dataGridViewList.Columns["Password"]!.Visible = false;
             dataGridViewList.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;

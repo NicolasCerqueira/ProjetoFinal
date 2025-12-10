@@ -9,10 +9,10 @@ namespace IFSPStore.App.Outros
 {
     public partial class Login : MaterialForm
     {
-        private readonly IBaseService<Funcionario> _userService;
-        public Login(IBaseService<Funcionario> userService)
+        private readonly IBaseService<Funcionario> _usuarioServico;
+        public Login(IBaseService<Funcionario> usuarioServico)
         {
-            _userService = userService;
+            _usuarioServico = usuarioServico;
             InitializeComponent();
             this.AcceptButton = btnLogin;
         }
@@ -25,7 +25,7 @@ namespace IFSPStore.App.Outros
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            Funcionario? user = searchUser(txtUser.Text, txtPassword.Text);
+            Funcionario? user = searchUser(txtUsuario.Text, txtSenha.Text);
             if (user != null)
             {
                 MainForm.User = user; 
@@ -40,17 +40,13 @@ namespace IFSPStore.App.Outros
         private Funcionario? searchUser(string login, string password)
         {
             checkValidUser();
-            var user = _userService.Get<Funcionario>().Where(u => u.Login == login && u.Senha == password)
+            var user = _usuarioServico.Get<Funcionario>().Where(u => u.Login == login && u.Senha == password)
                 .FirstOrDefault();
-            /*if (user != null)
-            {
-                return null;
-            }*/
             return user;
         }
         private void checkValidUser()
         {
-            var users = _userService.Get<Funcionario>().ToList();
+            var users = _usuarioServico.Get<Funcionario>().ToList();
             if (!users.Any(u => u.Login == "admin"))
             {
                 var user = new Funcionario
@@ -63,7 +59,7 @@ namespace IFSPStore.App.Outros
                     UltimoLogin = DateTime.Now,
                     Email = "admin@gmail.com",
                 };
-                _userService.Add<Funcionario, Funcionario, FuncionarioValidator>(user);
+                _usuarioServico.Add<Funcionario, Funcionario, FuncionarioValidator>(user);
 
             }
         }

@@ -28,73 +28,73 @@
         /// </summary>
         private void InitializeComponent()
         {
-            txtUser = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
-            txtPassword = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
+            txtUsuario = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
+            txtSenha = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             btnLogin = new ReaLTaiizor.Controls.MaterialButton();
-            btnCancel = new ReaLTaiizor.Controls.MaterialButton();
+            btnCancelar = new ReaLTaiizor.Controls.MaterialButton();
             SuspendLayout();
             // 
-            // txtUser
+            // txtUsuario
             // 
-            txtUser.AnimateReadOnly = false;
-            txtUser.AutoCompleteMode = AutoCompleteMode.None;
-            txtUser.AutoCompleteSource = AutoCompleteSource.None;
-            txtUser.BackgroundImageLayout = ImageLayout.None;
-            txtUser.CharacterCasing = CharacterCasing.Normal;
-            txtUser.Depth = 0;
-            txtUser.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            txtUser.HideSelection = true;
-            txtUser.Hint = "User";
-            txtUser.LeadingIcon = null;
-            txtUser.Location = new Point(103, 98);
-            txtUser.MaxLength = 32767;
-            txtUser.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            txtUser.Name = "txtUser";
-            txtUser.PasswordChar = '\0';
-            txtUser.PrefixSuffixText = null;
-            txtUser.ReadOnly = false;
-            txtUser.RightToLeft = RightToLeft.No;
-            txtUser.SelectedText = "";
-            txtUser.SelectionLength = 0;
-            txtUser.SelectionStart = 0;
-            txtUser.ShortcutsEnabled = true;
-            txtUser.Size = new Size(342, 48);
-            txtUser.TabIndex = 0;
-            txtUser.TabStop = false;
-            txtUser.TextAlign = HorizontalAlignment.Center;
-            txtUser.TrailingIcon = null;
-            txtUser.UseSystemPasswordChar = false;
+            txtUsuario.AnimateReadOnly = false;
+            txtUsuario.AutoCompleteMode = AutoCompleteMode.None;
+            txtUsuario.AutoCompleteSource = AutoCompleteSource.None;
+            txtUsuario.BackgroundImageLayout = ImageLayout.None;
+            txtUsuario.CharacterCasing = CharacterCasing.Normal;
+            txtUsuario.Depth = 0;
+            txtUsuario.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtUsuario.HideSelection = true;
+            txtUsuario.Hint = "Usuario";
+            txtUsuario.LeadingIcon = null;
+            txtUsuario.Location = new Point(103, 98);
+            txtUsuario.MaxLength = 32767;
+            txtUsuario.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            txtUsuario.Name = "txtUsuario";
+            txtUsuario.PasswordChar = '\0';
+            txtUsuario.PrefixSuffixText = null;
+            txtUsuario.ReadOnly = false;
+            txtUsuario.RightToLeft = RightToLeft.No;
+            txtUsuario.SelectedText = "";
+            txtUsuario.SelectionLength = 0;
+            txtUsuario.SelectionStart = 0;
+            txtUsuario.ShortcutsEnabled = true;
+            txtUsuario.Size = new Size(342, 48);
+            txtUsuario.TabIndex = 0;
+            txtUsuario.TabStop = false;
+            txtUsuario.TextAlign = HorizontalAlignment.Center;
+            txtUsuario.TrailingIcon = null;
+            txtUsuario.UseSystemPasswordChar = false;
             // 
-            // txtPassword
+            // txtSenha
             // 
-            txtPassword.AnimateReadOnly = false;
-            txtPassword.AutoCompleteMode = AutoCompleteMode.None;
-            txtPassword.AutoCompleteSource = AutoCompleteSource.None;
-            txtPassword.BackgroundImageLayout = ImageLayout.None;
-            txtPassword.CharacterCasing = CharacterCasing.Normal;
-            txtPassword.Depth = 0;
-            txtPassword.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            txtPassword.HideSelection = true;
-            txtPassword.Hint = "Password";
-            txtPassword.LeadingIcon = null;
-            txtPassword.Location = new Point(103, 162);
-            txtPassword.MaxLength = 32767;
-            txtPassword.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            txtPassword.Name = "txtPassword";
-            txtPassword.PasswordChar = '●';
-            txtPassword.PrefixSuffixText = null;
-            txtPassword.ReadOnly = false;
-            txtPassword.RightToLeft = RightToLeft.No;
-            txtPassword.SelectedText = "";
-            txtPassword.SelectionLength = 0;
-            txtPassword.SelectionStart = 0;
-            txtPassword.ShortcutsEnabled = true;
-            txtPassword.Size = new Size(342, 48);
-            txtPassword.TabIndex = 1;
-            txtPassword.TabStop = false;
-            txtPassword.TextAlign = HorizontalAlignment.Center;
-            txtPassword.TrailingIcon = null;
-            txtPassword.UseSystemPasswordChar = true;
+            txtSenha.AnimateReadOnly = false;
+            txtSenha.AutoCompleteMode = AutoCompleteMode.None;
+            txtSenha.AutoCompleteSource = AutoCompleteSource.None;
+            txtSenha.BackgroundImageLayout = ImageLayout.None;
+            txtSenha.CharacterCasing = CharacterCasing.Normal;
+            txtSenha.Depth = 0;
+            txtSenha.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtSenha.HideSelection = true;
+            txtSenha.Hint = "Senha";
+            txtSenha.LeadingIcon = null;
+            txtSenha.Location = new Point(103, 162);
+            txtSenha.MaxLength = 32767;
+            txtSenha.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            txtSenha.Name = "txtSenha";
+            txtSenha.PasswordChar = '●';
+            txtSenha.PrefixSuffixText = null;
+            txtSenha.ReadOnly = false;
+            txtSenha.RightToLeft = RightToLeft.No;
+            txtSenha.SelectedText = "";
+            txtSenha.SelectionLength = 0;
+            txtSenha.SelectionStart = 0;
+            txtSenha.ShortcutsEnabled = true;
+            txtSenha.Size = new Size(342, 48);
+            txtSenha.TabIndex = 1;
+            txtSenha.TabStop = false;
+            txtSenha.TextAlign = HorizontalAlignment.Center;
+            txtSenha.TrailingIcon = null;
+            txtSenha.UseSystemPasswordChar = true;
             // 
             // btnLogin
             // 
@@ -117,50 +117,50 @@
             btnLogin.UseVisualStyleBackColor = true;
             btnLogin.Click += btnLogin_Click;
             // 
-            // btnCancel
+            // btnCancelar
             // 
-            btnCancel.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            btnCancel.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
-            btnCancel.Depth = 0;
-            btnCancel.HighEmphasis = true;
-            btnCancel.Icon = null;
-            btnCancel.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            btnCancel.Location = new Point(301, 219);
-            btnCancel.Margin = new Padding(4, 6, 4, 6);
-            btnCancel.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            btnCancel.Name = "btnCancel";
-            btnCancel.NoAccentTextColor = Color.Empty;
-            btnCancel.Size = new Size(77, 36);
-            btnCancel.TabIndex = 3;
-            btnCancel.Text = "Cancel";
-            btnCancel.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
-            btnCancel.UseAccentColor = false;
-            btnCancel.UseVisualStyleBackColor = true;
-            btnCancel.Click += btnCancel_Click;
+            btnCancelar.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btnCancelar.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
+            btnCancelar.Depth = 0;
+            btnCancelar.HighEmphasis = true;
+            btnCancelar.Icon = null;
+            btnCancelar.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
+            btnCancelar.Location = new Point(301, 219);
+            btnCancelar.Margin = new Padding(4, 6, 4, 6);
+            btnCancelar.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.NoAccentTextColor = Color.Empty;
+            btnCancelar.Size = new Size(77, 36);
+            btnCancelar.TabIndex = 3;
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
+            btnCancelar.UseAccentColor = false;
+            btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Click += btnCancel_Click;
             // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(546, 337);
-            Controls.Add(btnCancel);
+            Controls.Add(btnCancelar);
             Controls.Add(btnLogin);
-            Controls.Add(txtPassword);
-            Controls.Add(txtUser);
+            Controls.Add(txtSenha);
+            Controls.Add(txtUsuario);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "Login";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Login IFSP Store";
+            Text = "DriveNow";
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private ReaLTaiizor.Controls.MaterialTextBoxEdit txtUser;
-        private ReaLTaiizor.Controls.MaterialTextBoxEdit txtPassword;
+        private ReaLTaiizor.Controls.MaterialTextBoxEdit txtUsuario;
+        private ReaLTaiizor.Controls.MaterialTextBoxEdit txtSenha;
         private ReaLTaiizor.Controls.MaterialButton btnLogin;
-        private ReaLTaiizor.Controls.MaterialButton btnCancel;
+        private ReaLTaiizor.Controls.MaterialButton btnCancelar;
     }
 }

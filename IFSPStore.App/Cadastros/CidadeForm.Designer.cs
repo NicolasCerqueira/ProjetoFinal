@@ -138,7 +138,7 @@
             ClientSize = new Size(806, 556);
             Location = new Point(0, 0);
             Name = "CidadeForm";
-            Text = "City ​​registration";
+            Text = "Casdastro de cidades";
             tabControlRegister.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             ResumeLayout(false);

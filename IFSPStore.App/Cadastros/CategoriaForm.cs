@@ -22,27 +22,49 @@ namespace IFSPStore.App.Cadastros
         }
         protected override void Save()
         {
-            try {
+            try
+            {
+                int id = 0;
                 if (IsEditMode)
                 {
-                    int.TryParse(txtId.Text, out int id);
+                    int.TryParse(txtId.Text, out id);
+                }
+
+                // Lista de categorias ja cadastradas no banco
+                var categoriasExistentes = _categoriaServico.Get<Categoria>();
+
+                // Verifica se existe alguma categoria com o mesmo nome
+                bool existeDuplicada = categoriasExistentes.Any(c =>
+                    c.Nome.Trim().Equals(txtNome.Text.Trim(), StringComparison.CurrentCultureIgnoreCase) && c.Id != id);
+
+                if (existeDuplicada)
+                {
+                    MessageBox.Show("Já existe uma categoria cadastrada com este nome.", @"DriveNow", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return; // se tem cat igual nao salva
+                }
+
+                if (IsEditMode)
+                {
                     var category = _categoriaServico.GetById<Categoria>(id);
                     FormToObject(category);
-                    category = _categoriaServico.Update<Categoria, Categoria,
-                        CategoriaValidator>(category);
-                } else
+                    category = _categoriaServico.Update<Categoria, Categoria, CategoriaValidator>(category);
+                }
+                else
                 {
                     var category = new Categoria();
                     FormToObject(category);
                     category = _categoriaServico.Add<Categoria, Categoria, CategoriaValidator>(category);
                 }
+
                 tabControlRegister.SelectedIndex = 1;
                 CarregaGrid();
-            } catch (Exception ex) {
+            }
+            catch (Exception ex)
+            {
                 MessageBox.Show(ex.Message, @"DriveNow", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
+   
         protected override void Delete(int id)
         {
             try

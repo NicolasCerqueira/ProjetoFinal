@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace IFSPStore.Repository.Migrations
 {
     [DbContext(typeof(MySqlContext))]
-    [Migration("20251210183153_BancoProjetoFinal")]
+    [Migration("20251210223818_BancoProjetoFinal")]
     partial class BancoProjetoFinal
     {
         /// <inheritdoc />
@@ -48,6 +48,11 @@ namespace IFSPStore.Repository.Migrations
                     b.Property<bool>("Disponivel")
                         .HasColumnType("tinyint(1)");
 
+                    b.Property<string>("Marca")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar(100)");
+
                     b.Property<string>("Modelo")
                         .IsRequired()
                         .HasMaxLength(100)
@@ -72,7 +77,7 @@ namespace IFSPStore.Repository.Migrations
 
                     b.HasIndex("CategoriaId");
 
-                    b.ToTable("Product", (string)null);
+                    b.ToTable("Carro", (string)null);
                 });
 
             modelBuilder.Entity("IFSPStore.Domain.Entities.CarrosAlugados", b =>
@@ -199,7 +204,7 @@ namespace IFSPStore.Repository.Migrations
                     b.Property<DateTime>("DataRegistro")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime(6)")
-                        .HasDefaultValue(new DateTime(2025, 12, 10, 15, 31, 53, 183, DateTimeKind.Local).AddTicks(2627));
+                        .HasDefaultValue(new DateTime(2025, 12, 10, 19, 38, 18, 73, DateTimeKind.Local).AddTicks(4283));
 
                     b.Property<string>("Email")
                         .IsRequired()

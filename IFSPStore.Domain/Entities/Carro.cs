@@ -9,13 +9,14 @@ namespace IFSPStore.Domain.Entities
             
         }
         public Carro(int id, string nome, decimal diaria, string placa, 
-            string modelo, int ano, string cor, DateTime dataAquisicao, 
+            string modelo, string marca, int ano, string cor, DateTime dataAquisicao, 
             bool disponivel, string status, Categoria category) : base(id)
         {
             Nome = nome;
             Diaria = diaria;
             Placa = placa;
             Modelo = modelo;
+            Marca = marca;
             Ano = ano;
             Cor = cor;
             DataAquisicao = dataAquisicao;
@@ -27,6 +28,7 @@ namespace IFSPStore.Domain.Entities
         public decimal Diaria { get; set; }
         public string Placa { get; set; }
         public string Modelo { get; set; }
+        public string Marca { get; set; }
         public int Ano { get; set; }
         public string Cor { get; set; }
         public DateTime DataAquisicao { get; set; }

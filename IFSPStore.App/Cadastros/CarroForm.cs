@@ -6,13 +6,13 @@ using IFSPStore.Service.Validator;
 
 namespace IFSPStore.App.Cadastros
 {
-    public partial class ProductForm : BaseForm
+    public partial class CarroForm : BaseForm
     {
         private readonly IBaseService<Carro> _productService;
         private readonly IBaseService<Categoria> _categoryService;
 
         private List<CarroModel>? products;
-        public ProductForm(IBaseService<Carro> productService, IBaseService<Categoria> categoryService)
+        public CarroForm(IBaseService<Carro> productService, IBaseService<Categoria> categoryService)
         {
             _productService = productService;
             _categoryService = categoryService;

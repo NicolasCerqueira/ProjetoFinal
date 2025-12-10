@@ -1,0 +1,6 @@
+﻿ 1) dotnet ef migrations add BancoProjetoFinal --project IFSPStore.Repository --startup-project IFSPStore.App
+ 
+ 2) dotnet ef database update --project IFSPStore.Repository --startup-project IFSPStore.App
+
+ obs1: sempre que fizer allterações na parte das entidades, deeve limpar a solução, recompilar o projeto 
+ e depois rodar os comandos acima.

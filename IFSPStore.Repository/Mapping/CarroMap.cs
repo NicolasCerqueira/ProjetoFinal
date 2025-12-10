@@ -20,6 +20,9 @@ namespace IFSPStore.Repository.Mapping
                 .HasMaxLength(100);
             builder.Property(prop => prop.Modelo)
                 .IsRequired()
+                .HasMaxLength(100); 
+            builder.Property(prop => prop.Marca)
+                .IsRequired()
                 .HasMaxLength(100);
             builder.Property(prop => prop.Ano)
                 .IsRequired();

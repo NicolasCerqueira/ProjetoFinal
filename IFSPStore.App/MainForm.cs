@@ -36,7 +36,7 @@ namespace IFSPStore.App
         }
         void productToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            showForm<ProductForm>();
+            showForm<CarroForm>();
         }
         private void customerToolStripMenuItem_Click(object sender, EventArgs e)
         {

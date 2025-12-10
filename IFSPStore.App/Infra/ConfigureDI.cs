@@ -53,7 +53,7 @@ namespace IFSPStore.App.Infra
             services.AddTransient<CategoriaForm, CategoriaForm>();
             services.AddTransient<CidadeForm, CidadeForm>();
             services.AddTransient<ClienteForm, ClienteForm>();
-            services.AddTransient<ProductForm, ProductForm>();
+            services.AddTransient<CarroForm, CarroForm>();
             services.AddTransient<SaleForm, SaleForm>();
             services.AddTransient<UserForm, UserForm>();
             services.AddTransient<HelpForm, HelpForm>();

@@ -55,7 +55,7 @@ namespace IFSPStore.Repository.Migrations
                     Login = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false),
                     Senha = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false),
                     Email = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false),
-                    DataRegistro = table.Column<DateTime>(type: "datetime(6)", nullable: false, defaultValue: new DateTime(2025, 12, 10, 15, 31, 53, 183, DateTimeKind.Local).AddTicks(2627)),
+                    DataRegistro = table.Column<DateTime>(type: "datetime(6)", nullable: false, defaultValue: new DateTime(2025, 12, 10, 19, 38, 18, 73, DateTimeKind.Local).AddTicks(4283)),
                     UltimoLogin = table.Column<DateTime>(type: "datetime(6)", maxLength: 100, nullable: false),
                     Ativo = table.Column<bool>(type: "tinyint(1)", nullable: false)
                 },
@@ -75,6 +75,7 @@ namespace IFSPStore.Repository.Migrations
                     Diaria = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     Placa = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false),
                     Modelo = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false),
+                    Marca = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false),
                     Ano = table.Column<int>(type: "int", nullable: false),
                     Cor = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false),
                     DataAquisicao = table.Column<DateTime>(type: "datetime(6)", nullable: false),
@@ -84,7 +85,7 @@ namespace IFSPStore.Repository.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Product", x => x.Id);
+                    table.PrimaryKey("PK_Carro", x => x.Id);
                     table.ForeignKey(
                         name: "nome_chave_estrangeira",
                         column: x => x.CategoriaId,
@@ -166,19 +167,24 @@ namespace IFSPStore.Repository.Migrations
                 {
                     table.PrimaryKey("PK_CarrosAlugados", x => x.Id);
                     table.ForeignKey(
+                        name: "FK_CarrosAlugados_Carro_CarroId",
+                        column: x => x.CarroId,
+                        principalTable: "Carro",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
                         name: "FK_CarrosAlugados_Locacao_LocacaoId",
                         column: x => x.LocacaoId,
                         principalTable: "Locacao",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_CarrosAlugados_Product_CarroId",
-                        column: x => x.CarroId,
-                        principalTable: "Product",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
                 })
                 .Annotation("MySQL:Charset", "utf8mb4");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Carro_CategoriaId",
+                table: "Carro",
+                column: "CategoriaId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_CarrosAlugados_CarroId",
@@ -204,11 +210,6 @@ namespace IFSPStore.Repository.Migrations
                 name: "IX_Locacao_FuncionarioId",
                 table: "Locacao",
                 column: "FuncionarioId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Product_CategoriaId",
-                table: "Product",
-                column: "CategoriaId");
         }
 
         /// <inheritdoc />
@@ -218,19 +219,19 @@ namespace IFSPStore.Repository.Migrations
                 name: "CarrosAlugados");
 
             migrationBuilder.DropTable(
+                name: "Carro");
+
+            migrationBuilder.DropTable(
                 name: "Locacao");
 
             migrationBuilder.DropTable(
-                name: "Product");
+                name: "Categoria");
 
             migrationBuilder.DropTable(
                 name: "Cliente");
 
             migrationBuilder.DropTable(
                 name: "Funcionario");
-
-            migrationBuilder.DropTable(
-                name: "Categoria");
 
             migrationBuilder.DropTable(
                 name: "Cidade");

@@ -19,6 +19,9 @@ namespace IFSPStore.Service.Validator
             RuleFor(p => p.Modelo)
                 .NotEmpty().NotNull()
                 .WithMessage("Modelo deve ser informado");
+            RuleFor(p => p.Marca)
+                .NotEmpty().NotNull()
+                .WithMessage("Marca deve ser informado");
             RuleFor(p => p.Ano)
                 .NotEmpty().NotNull()
                 .WithMessage("Ano deve ser informado");

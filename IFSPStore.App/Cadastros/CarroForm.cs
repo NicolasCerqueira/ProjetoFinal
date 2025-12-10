@@ -3,56 +3,63 @@ using IFSPStore.App.Models;
 using IFSPStore.Domain.Base;
 using IFSPStore.Domain.Entities;
 using IFSPStore.Service.Validator;
+using System.Globalization;
 
 namespace IFSPStore.App.Cadastros
 {
     public partial class CarroForm : BaseForm
     {
-        private readonly IBaseService<Carro> _productService;
-        private readonly IBaseService<Categoria> _categoryService;
+        private readonly IBaseService<Carro> _carroServico;
+        private readonly IBaseService<Categoria> _categoriaServico;
 
         private List<CarroModel>? products;
-        public CarroForm(IBaseService<Carro> productService, IBaseService<Categoria> categoryService)
+
+        public CarroForm(IBaseService<Carro> carroServico, IBaseService<Categoria> categoriaServico)
         {
-            _productService = productService;
-            _categoryService = categoryService;
+            _carroServico = carroServico;
+            _categoriaServico = categoriaServico;
             InitializeComponent();
             loadCombo();
-            txtSaleDate.Text = DateTime.Now.ToString("d");
+            txtDataAquisicao.Text = DateTime.Now.ToString("d");
         }
+
         private void loadCombo()
         {
-            cboCategory.ValueMember = "Id";
-            cboCategory.DisplayMember = "Name";
-            cboCategory.DataSource = _categoryService.Get<CategoriaModel>().ToList();
+            cboCategoria.ValueMember = "Id";
+            cboCategoria.DisplayMember = "Nome";
+            cboCategoria.DataSource = _categoriaServico.Get<CategoriaModel>().ToList();
         }
 
-        private void PreencheObject(Carro product)
+        private void PreencheObject(Carro carro)
         {
-            product.Nome = txtName.Text;
-            if (decimal.TryParse(txtPrice.Text, System.Globalization.NumberStyles.Currency, System.Globalization.CultureInfo.CurrentCulture, out decimal price))
+            carro.Nome = txtNome.Text;
+            carro.Placa = txtPlaca.Text;
+            carro.Modelo = txtModelo.Text;
+            carro.Marca = txtMarca.Text;
+            carro.Cor = txtCor.Text;
+            carro.Status = cboStatus.Text;
+            carro.Disponivel = switch1.Checked;
+
+            if (int.TryParse(txtAno.Text, out int ano))
             {
-                product.Diaria = price;
+                carro.Ano = ano;
             }
 
-            if (DateTime.TryParse(txtSaleDate.Text, out var dataCompra))
+            if (decimal.TryParse(txtDiaria.Text, NumberStyles.Currency, CultureInfo.CurrentCulture, out decimal preco))
             {
-                product.DataAquisicao = dataCompra;
-            }
-            //product.Diaria = txtSaleUnit.Text;
-            if (int.TryParse(txtQuantity.Text, out var quantity))
-            {
-                //product. = quantity;
+                carro.Diaria = preco;
             }
 
-            if (cboCategory.SelectedValue != null && 
-                int.TryParse(cboCategory.SelectedValue.ToString(), out int idCategory))
+            if (DateTime.TryParse(txtDataAquisicao.Text, out var dataCompra))
             {
-                //var category = _categoryService.GetById<Category>(idCategory);
-                //product.Category = category;
-                //product.CategoryId = idCategory;
-                //product.Category = null;
+                carro.DataAquisicao = dataCompra;
+            }
 
+            if (cboCategoria.SelectedValue != null &&
+                int.TryParse(cboCategoria.SelectedValue.ToString(), out int idCategory))
+            {
+                carro.CategoriaId = idCategory;
+                carro.Categoria = null;
             }
         }
 
@@ -64,24 +71,23 @@ namespace IFSPStore.App.Cadastros
                 {
                     if (int.TryParse(txtId.Text, out var id))
                     {
-                        var product = _productService.GetById<Carro>(id);
-                        PreencheObject(product);
-                        product = _productService.Update<Carro, Carro, CarroValidator>(product);
+                        var carro = _carroServico.GetById<Carro>(id);
+                        PreencheObject(carro);
+                        carro = _carroServico.Update<Carro, Carro, CarroValidator>(carro);
                     }
                 }
                 else
                 {
-                    var product = new Carro();
-                    PreencheObject(product);
-                    _productService.Add<Carro, Carro, CarroValidator>(product);
-
+                    var carro = new Carro();
+                    PreencheObject(carro);
+                    _carroServico.Add<Carro, Carro, CarroValidator>(carro);
                 }
                 CarregaGrid();
                 tabControlRegister.SelectedIndex = 1;
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, @"IFSP Store", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, @"DriveNow", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -89,33 +95,43 @@ namespace IFSPStore.App.Cadastros
         {
             try
             {
-                _productService.Delete(id);
+                _carroServico.Delete(id);
+                CarregaGrid();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, @"IFSP Store", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, @"DriveNow", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         protected override void CarregaGrid()
         {
-            //products = _productService.Get<Locacao>(new[] { "Category" }).ToList();
+            products = _carroServico.Get<CarroModel>(new[] { "Categoria" }).ToList();
             dataGridViewList.DataSource = products;
-            dataGridViewList.Columns["IdCategory"]!.Visible = false;
+            dataGridViewList.Columns["Nome"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            if (dataGridViewList.Columns.Contains("CategoriaId"))
+                dataGridViewList.Columns["CategoriaId"].Visible = false;
         }
 
         protected override void loadList(DataGridViewRow? linha)
         {
-            txtId.Text = linha?.Cells["Id"].Value.ToString();
-            txtName.Text = linha?.Cells["Name"].Value.ToString();
-            txtSaleUnit.Text = linha?.Cells["SalesUnit"].Value.ToString();
-            txtPrice.Text = linha?.Cells["Price"].Value.ToString();
-            cboCategory.SelectedValue = linha?.Cells["Category"].Value;
-            txtSaleDate.Text = DateTime.TryParse(linha?.Cells["PurchaseDate"].Value.ToString(), out var dataC)
-               ? dataC.ToString("g")
-               : "";
+            if (linha == null) return;
 
+            txtId.Text = linha.Cells["Id"].Value.ToString();
+            txtNome.Text = linha.Cells["Nome"].Value.ToString();
+            txtDiaria.Text = linha.Cells["Diaria"].Value.ToString();
+            txtPlaca.Text = linha.Cells["Placa"].Value?.ToString();
+            txtModelo.Text = linha.Cells["Modelo"].Value?.ToString();
+            txtAno.Text = linha.Cells["Ano"].Value?.ToString();
+            txtCor.Text = linha.Cells["Cor"].Value?.ToString();
+            cboStatus.Text = linha.Cells["Status"].Value?.ToString();
+
+            if (linha.Cells["Disponivel"].Value != null)
+                switch1.Checked = (bool)linha.Cells["Disponivel"].Value;
+
+            cboCategoria.SelectedValue = linha.Cells["CategoriaId"].Value;
+
+            txtDataAquisicao.Text = DateTime.Now.ToString("d");
         }
-
     }
 }

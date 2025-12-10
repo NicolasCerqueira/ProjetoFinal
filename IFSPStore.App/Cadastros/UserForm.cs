@@ -18,15 +18,15 @@ namespace IFSPStore.App.Cadastros
         }
         private void PreencheObjeto(Funcionario user)
         {
-            user.Name = txtName.Text;
+            user.Nome = txtName.Text;
             user.Email = txtEmail.Text;
             user.Login = txtLogin.Text;
-            user.Password = txtPassword.Text;
-            user.IsActive = chkActive.Checked;
+            user.Senha = txtPassword.Text;
+            user.Ativo = chkActive.Checked;
             if (user.Id == 0)
             {
-                user.RegisterDate = DateTime.Now;
-                user.LoginDate = DateTime.Now; // Valor inicial
+                user.DataRegistro = DateTime.Now;
+                user.UltimoLogin = DateTime.Now; // Valor inicial
             }
         }
 

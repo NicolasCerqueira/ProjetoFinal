@@ -233,7 +233,6 @@
             btnExcluir.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
             btnExcluir.UseAccentColor = false;
             btnExcluir.UseVisualStyleBackColor = true;
-            btnExcluir.Click += btnExcluir_Click;
             // 
             // cboCategory
             // 
@@ -289,8 +288,6 @@
             txtQuantity.TextAlign = HorizontalAlignment.Left;
             txtQuantity.TrailingIcon = null;
             txtQuantity.UseSystemPasswordChar = false;
-            txtQuantity.KeyPress += txtQuantity_KeyPress;
-            txtQuantity.Leave += txtQuantity_Leave_1;
             // 
             // dataGridViewItens
             // 
@@ -322,7 +319,6 @@
             btnAdd.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
             btnAdd.UseAccentColor = false;
             btnAdd.UseVisualStyleBackColor = true;
-            btnAdd.Click += btnAdd_Click;
             // 
             // txtTotalPrice
             // 
@@ -387,7 +383,6 @@
             txtPrice.TextAlign = HorizontalAlignment.Left;
             txtPrice.TrailingIcon = null;
             txtPrice.UseSystemPasswordChar = false;
-            txtPrice.Leave += txtQuantity_Leave;
             // 
             // txtSaleUnit
             // 
@@ -443,7 +438,6 @@
             cboProduct.Size = new Size(238, 49);
             cboProduct.StartIndex = 0;
             cboProduct.TabIndex = 0;
-            cboProduct.SelectedValueChanged += cboProduct_SelectedValueChanged;
             // 
             // lblQtdItens
             // 

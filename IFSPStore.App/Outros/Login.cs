@@ -40,7 +40,7 @@ namespace IFSPStore.App.Outros
         private Funcionario? searchUser(string login, string password)
         {
             checkValidUser();
-            var user = _userService.Get<Funcionario>().Where(u => u.Login == login && u.Password == password)
+            var user = _userService.Get<Funcionario>().Where(u => u.Login == login && u.Senha == password)
                 .FirstOrDefault();
             /*if (user != null)
             {
@@ -56,11 +56,11 @@ namespace IFSPStore.App.Outros
                 var user = new Funcionario
                 {
                     Login = "admin",
-                    Password = "admin",
-                    Name = "Administrator do sistema",
-                    IsActive = true,
-                    RegisterDate = DateTime.Now,
-                    LoginDate = DateTime.Now,
+                    Senha = "admin",
+                    Nome = "Administrator do sistema",
+                    Ativo = true,
+                    DataRegistro = DateTime.Now,
+                    UltimoLogin = DateTime.Now,
                     Email = "admin@gmail.com",
                 };
                 _userService.Add<Funcionario, Funcionario, FuncionarioValidator>(user);

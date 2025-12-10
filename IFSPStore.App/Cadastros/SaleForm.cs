@@ -11,7 +11,7 @@ namespace IFSPStore.App.Cadastros
 {
     public partial class SaleForm : BaseForm
     {
-        private List<SaleItemModel> _saleItems = new List<SaleItemModel>();
+        /*private List<SaleItemModel> _saleItems = new List<SaleItemModel>();
         private readonly IBaseService<Locacao> _saleService;
         private readonly IBaseService<Funcionario> _userService;
         private readonly IBaseService<Cliente> _customerService;
@@ -339,5 +339,5 @@ namespace IFSPStore.App.Cadastros
                 MessageBox.Show("Selecione um item para remover.");
             }
         }
-    }
+    */}
 }

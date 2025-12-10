@@ -34,8 +34,8 @@ namespace IFSPStore.Test
             var _userService = serviceProvider.GetService<IBaseService<Funcionario>>();
             var user = new Funcionario
             {
-                Name = "murilo",
-                Password = "123"
+                Nome = "murilo",
+                Senha = "123"
             };
             var result = _userService.Add<Funcionario, Funcionario, FuncionarioValidator>(user);
             Console.WriteLine(JsonSerializer.Serialize(result));

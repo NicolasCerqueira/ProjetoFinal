@@ -40,11 +40,11 @@ namespace IFSPStore.App
         }
         private void customerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            showForm<CustomerForm>();
+            showForm<ClienteForm>();
         }
         private void saleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            showForm<SaleForm>();
+            //showForm<SaleForm>();
         }
         private void cityToolStripMenuItem_Click(object sender, EventArgs e)
         {

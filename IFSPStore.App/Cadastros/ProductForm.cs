@@ -11,7 +11,7 @@ namespace IFSPStore.App.Cadastros
         private readonly IBaseService<Carro> _productService;
         private readonly IBaseService<Categoria> _categoryService;
 
-        private List<Models.testeModel>? products;
+        private List<CarroModel>? products;
         public ProductForm(IBaseService<Carro> productService, IBaseService<Categoria> categoryService)
         {
             _productService = productService;
@@ -29,20 +29,20 @@ namespace IFSPStore.App.Cadastros
 
         private void PreencheObject(Carro product)
         {
-            product.Name = txtName.Text;
+            product.Nome = txtName.Text;
             if (decimal.TryParse(txtPrice.Text, System.Globalization.NumberStyles.Currency, System.Globalization.CultureInfo.CurrentCulture, out decimal price))
             {
-                product.Price = price;
+                product.Diaria = price;
             }
 
             if (DateTime.TryParse(txtSaleDate.Text, out var dataCompra))
             {
-                product.PurchaseDate = dataCompra;
+                product.DataAquisicao = dataCompra;
             }
-            product.SalesUnit = txtSaleUnit.Text;
+            //product.Diaria = txtSaleUnit.Text;
             if (int.TryParse(txtQuantity.Text, out var quantity))
             {
-                product.Quantity = quantity;
+                //product. = quantity;
             }
 
             if (cboCategory.SelectedValue != null && 
@@ -50,8 +50,8 @@ namespace IFSPStore.App.Cadastros
             {
                 //var category = _categoryService.GetById<Category>(idCategory);
                 //product.Category = category;
-                product.CategoryId = idCategory;
-                product.Category = null;
+                //product.CategoryId = idCategory;
+                //product.Category = null;
 
             }
         }
@@ -99,7 +99,7 @@ namespace IFSPStore.App.Cadastros
 
         protected override void CarregaGrid()
         {
-            products = _productService.Get<Locacao>(new[] { "Category" }).ToList();
+            //products = _productService.Get<Locacao>(new[] { "Category" }).ToList();
             dataGridViewList.DataSource = products;
             dataGridViewList.Columns["IdCategory"]!.Visible = false;
         }

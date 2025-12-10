@@ -10,7 +10,7 @@ namespace IFSPStore.App.Models
     {
         public int Id { get; set; }
         public string? Nome { get; set; }
-        public int cnh { get; set; }
+        public int Cnh { get; set; }
         public string? Endereco { get; set; }
         public string? Documento { get; set; }
         public string? Bairro { get; set; }

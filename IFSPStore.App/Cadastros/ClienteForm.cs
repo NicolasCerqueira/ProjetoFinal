@@ -7,13 +7,13 @@ using MySqlX.XDevAPI;
 
 namespace IFSPStore.App.Cadastros
 {
-    public partial class CustomerForm : BaseForm
+    public partial class ClienteForm : BaseForm
     {
         private readonly IBaseService<Cliente> _customerService;
         private readonly IBaseService<Cidade> _cityService;
 
         private List<ClienteModel>? customers;
-        public CustomerForm(IBaseService<Cliente> clienteService, IBaseService<Cidade> cidadeService)
+        public ClienteForm(IBaseService<Cliente> clienteService, IBaseService<Cidade> cidadeService)
         {
             _customerService = clienteService;
             _cityService = cidadeService;
@@ -28,15 +28,15 @@ namespace IFSPStore.App.Cadastros
         }
         private void preencheObject(Cliente customer)
         {
-            customer.Nome = txtName.Text;
-            customer.Address = txtAdress.Text;
-            customer.District = txtDistrict.Text;
-            customer.DocumentId = txtDocument.Text;
+            customer.Nome = txtNome.Text;
+            customer.Endereco = txtEndereco.Text;
+            customer.Bairro = txtBairro.Text;
+            customer.Documento = txtDocumento.Text;
             if (int.TryParse(cboCity.SelectedValue?.ToString(), out var idCity))
                 {
                 //var city = _cityService.GetById<City>(idCategory);
-                customer.CityId = idCity;
-                customer.City = null;
+                customer.CidadeId = idCity;
+                customer.Cidade = null;
                 }
         }
         protected override void Save()
@@ -86,10 +86,10 @@ namespace IFSPStore.App.Cadastros
         protected override void loadList(DataGridViewRow? record)
         {
            txtId.Text = record!.Cells["Id"].Value.ToString();
-           txtName.Text = record.Cells["Name"].Value.ToString();
-           txtAdress.Text = record.Cells["Address"].Value.ToString();
-           txtDistrict.Text = record.Cells["District"].Value.ToString();
-           txtDocument.Text = record.Cells["Document"].Value?.ToString();
+           txtNome.Text = record.Cells["Name"].Value.ToString();
+           txtEndereco.Text = record.Cells["Address"].Value.ToString();
+           txtBairro.Text = record.Cells["District"].Value.ToString();
+           txtDocumento.Text = record.Cells["Document"].Value?.ToString();
            cboCity.SelectedValue = record.Cells["IdCity"].Value;
         }
     }

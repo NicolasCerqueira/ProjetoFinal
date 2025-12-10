@@ -15,10 +15,10 @@ namespace IFSPStore.App.Cadastros
             _categoriaServico = categoriaServico;
             InitializeComponent();
         }
-        private void FormToObject(Categoria category)
+        private void FormToObject(Categoria categoria)
         {
-            category.Nome = txtNome.Text;
-            category.Descricao = txtDescrição.Text;
+            categoria.Nome = txtNome.Text;
+            categoria.Descricao = txtDescrição.Text;
         }
         protected override void Save()
         {
@@ -45,15 +45,15 @@ namespace IFSPStore.App.Cadastros
 
                 if (IsEditMode)
                 {
-                    var category = _categoriaServico.GetById<Categoria>(id);
-                    FormToObject(category);
-                    category = _categoriaServico.Update<Categoria, Categoria, CategoriaValidator>(category);
+                    var categoria = _categoriaServico.GetById<Categoria>(id);
+                    FormToObject(categoria);
+                    categoria = _categoriaServico.Update<Categoria, Categoria, CategoriaValidator>(categoria);
                 }
                 else
                 {
-                    var category = new Categoria();
-                    FormToObject(category);
-                    category = _categoriaServico.Add<Categoria, Categoria, CategoriaValidator>(category);
+                    var categoria = new Categoria();
+                    FormToObject(categoria);
+                    categoria = _categoriaServico.Add<Categoria, Categoria, CategoriaValidator>(categoria);
                 }
 
                 tabControlRegister.SelectedIndex = 1;
@@ -91,11 +91,11 @@ namespace IFSPStore.App.Cadastros
                 MessageBox.Show(ex.Message, @"DriveNow", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        protected override void GridToForm(DataGridViewRow? record)
+        protected override void GridToForm(DataGridViewRow? linha)
         {
-            txtId.Text = record?.Cells["Id"].Value.ToString();
-            txtNome.Text = record?.Cells["Nome"].Value.ToString();
-            txtDescrição.Text = record?.Cells["Descricao"].Value.ToString();
+            txtId.Text = linha?.Cells["Id"].Value.ToString();
+            txtNome.Text = linha?.Cells["Nome"].Value.ToString();
+            txtDescrição.Text = linha?.Cells["Descricao"].Value.ToString();
         }
     }
 }

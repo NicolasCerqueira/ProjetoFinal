@@ -8,15 +8,15 @@ namespace IFSPStore.App.Cadastros
     {
         private IBaseService<Cidade> _cidadeServico;
         private List<Cidade> cidades;
-        public CidadeForm(IBaseService<Cidade> cityService)
+        public CidadeForm(IBaseService<Cidade> cidadeService)
         {
-            _cidadeServico = cityService;
+            _cidadeServico = cidadeService;
             InitializeComponent();
         }
-        private void preencheObject(Cidade city)
+        private void preencheObject(Cidade cidade)
         {
-            city.Nome = txtNome.Text;
-            city.Estado = cboEstado.Text;
+            cidade.Nome = txtNome.Text;
+            cidade.Estado = cboEstado.Text;
         }
         protected override void Save()
         {
@@ -29,12 +29,14 @@ namespace IFSPStore.App.Cadastros
                 }
 
                 // Lista de cidades ja cadastradas no banco
-                var categoriasExistentes = _cidadeServico.Get<Cidade>();
+                var cidadesExistentes = _cidadeServico.Get<Cidade>();
 
                 // Verifica se existe alguma cidade com o mesmo nome
                 //qualquer dulicação ja implica em um cadastro invalido
-                bool existeDuplicada = categoriasExistentes.Any(c =>
-                    c.Nome.Trim().Equals(txtNome.Text.Trim(), StringComparison.CurrentCultureIgnoreCase) && c.Id != id);
+                bool existeDuplicada = cidadesExistentes.Any(c =>
+                    c.Nome.Trim().Equals(txtNome.Text.Trim(), StringComparison.CurrentCultureIgnoreCase) &&
+                    c.Estado.Trim().Equals(cboEstado.Text.Trim(), StringComparison.CurrentCultureIgnoreCase) &&
+                    c.Id != id);
 
                 if (existeDuplicada)
                 {
@@ -43,16 +45,16 @@ namespace IFSPStore.App.Cadastros
                 }
                 if (IsEditMode)
                 {
-                    var city = _cidadeServico.GetById<Cidade>(id);
-                    preencheObject(city);
-                    city = _cidadeServico.Update<Cidade, Cidade, CidadeValidator>(city);
+                    var cidade = _cidadeServico.GetById<Cidade>(id);
+                    preencheObject(cidade);
+                    cidade = _cidadeServico.Update<Cidade, Cidade, CidadeValidator>(cidade);
                     
                 }
                 else
                 {
-                    var city = new Cidade();
-                    preencheObject(city);
-                    _cidadeServico.Add<Cidade, Cidade, CidadeValidator>(city);
+                    var cidade = new Cidade();
+                    preencheObject(cidade);
+                    _cidadeServico.Add<Cidade, Cidade, CidadeValidator>(cidade);
 
                 }
                 tabControlRegister.SelectedIndex = 1;

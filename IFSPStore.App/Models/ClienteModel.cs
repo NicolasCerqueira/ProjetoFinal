@@ -14,8 +14,8 @@ namespace IFSPStore.App.Models
         public string? Endereco { get; set; }
         public string? Documento { get; set; }
         public string? Bairro { get; set; }
-        public string? City { get; set; }
-        public int IdCity { get; set; }
+        public string? Cidade { get; set; }
+        public int CidadeId { get; set; }
 
     }
 }

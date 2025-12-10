@@ -145,7 +145,7 @@
             ClientSize = new Size(810, 558);
             Location = new Point(0, 0);
             Name = "CategoriaForm";
-            Text = "Category ​​registration";
+            Text = "Registro de categorias";
             tabControlRegister.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             ResumeLayout(false);

@@ -8,7 +8,7 @@ namespace IFSPStore.Repository.Mapping
     {
         public void Configure(EntityTypeBuilder<Carro> builder)
         {
-            builder.ToTable("Product");
+            builder.ToTable("Carro");
             builder.HasKey(prop => prop.Id);
             builder.Property(prop => prop.Nome)
                 .IsRequired()

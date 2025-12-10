@@ -8,7 +8,7 @@ namespace IFSPStore.Repository.Mapping
     {
         public void Configure(EntityTypeBuilder<Categoria> builder)
         {
-            builder.ToTable("Category");
+            builder.ToTable("Categoria");
             builder.HasKey(prop => prop.Id);
 
             builder.Property(prop => prop.Nome)

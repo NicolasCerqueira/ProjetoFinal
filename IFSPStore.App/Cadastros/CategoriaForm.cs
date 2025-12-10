@@ -8,11 +8,11 @@ namespace IFSPStore.App.Cadastros
 {
     public partial class CategoriaForm : BaseForm
     {
-        private readonly IBaseService<Categoria> _categoryService;
-        private List<CategoriaModel>? categories;
-        public CategoriaForm(IBaseService<Categoria> categoryService)
+        private readonly IBaseService<Categoria> _categoriaServico;
+        private List<CategoriaModel>? categorias;
+        public CategoriaForm(IBaseService<Categoria> categoriaServico)
         {
-            _categoryService = categoryService;
+            _categoriaServico = categoriaServico;
             InitializeComponent();
         }
         private void FormToObject(Categoria category)
@@ -26,20 +26,20 @@ namespace IFSPStore.App.Cadastros
                 if (IsEditMode)
                 {
                     int.TryParse(txtId.Text, out int id);
-                    var category = _categoryService.GetById<Categoria>(id);
+                    var category = _categoriaServico.GetById<Categoria>(id);
                     FormToObject(category);
-                    category = _categoryService.Update<Categoria, Categoria,
+                    category = _categoriaServico.Update<Categoria, Categoria,
                         CategoriaValidator>(category);
                 } else
                 {
                     var category = new Categoria();
                     FormToObject(category);
-                    category = _categoryService.Add<Categoria, Categoria, CategoriaValidator>(category);
+                    category = _categoriaServico.Add<Categoria, Categoria, CategoriaValidator>(category);
                 }
                 tabControlRegister.SelectedIndex = 1;
                 CarregaGrid();
             } catch (Exception ex) {
-                MessageBox.Show(ex.Message, @"IFSP Store", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, @"DriveNow", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -47,11 +47,11 @@ namespace IFSPStore.App.Cadastros
         {
             try
             {
-                _categoryService.Delete(id);
+                _categoriaServico.Delete(id);
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, @"IFSP Store", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, @"DriveNow", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -59,21 +59,21 @@ namespace IFSPStore.App.Cadastros
         {
             try
             {
-                categories = _categoryService.Get<CategoriaModel>().ToList();
-                dataGridViewList.DataSource = categories;
-                dataGridViewList.Columns["Name"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                categorias = _categoriaServico.Get<CategoriaModel>().ToList();
+                dataGridViewList.DataSource = categorias;
+                dataGridViewList.Columns["Nome"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "IFSP Store", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, @"DriveNow", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         protected override void GridToForm(DataGridViewRow? record)
         {
             txtId.Text = record?.Cells["Id"].Value.ToString();
-            txtNome.Text = record?.Cells["Name"].Value.ToString();
-            txtDescrição.Text = record?.Cells["Description"].Value.ToString();
+            txtNome.Text = record?.Cells["Nome"].Value.ToString();
+            txtDescrição.Text = record?.Cells["Descricao"].Value.ToString();
         }
     }
 }

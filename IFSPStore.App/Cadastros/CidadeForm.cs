@@ -43,7 +43,7 @@ namespace IFSPStore.App.Cadastros
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, @"IFSP Store",
+                MessageBox.Show(ex.Message, @"DriveNow",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -55,7 +55,7 @@ namespace IFSPStore.App.Cadastros
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, @"IFSP Store",
+                MessageBox.Show(ex.Message, @"DriveNow",
                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -63,14 +63,14 @@ namespace IFSPStore.App.Cadastros
         {
             cities = _cityService.Get<Cidade>().ToList();
             dataGridViewList.DataSource = cities;
-            dataGridViewList.Columns["Name"]!.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewList.Columns["Nome"]!.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
         protected override void loadList(DataGridViewRow? linha)
         {
             //aqui deve estar do mesmo jeito que o nome das colunas do datagridview
             txtId.Text = linha?.Cells["Id"].Value.ToString();
-            txtNome.Text = linha?.Cells["Name"].Value.ToString();
-            cboEstado.Text = linha?.Cells["State"].Value.ToString();
+            txtNome.Text = linha?.Cells["ome"].Value.ToString();
+            cboEstado.Text = linha?.Cells["Estado"].Value.ToString();
         }
     }
 }

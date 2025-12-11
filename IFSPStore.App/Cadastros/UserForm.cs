@@ -60,7 +60,7 @@ namespace IFSPStore.App.Cadastros
                 }
                 CarregaGrid();
                 tabControlRegister.SelectedIndex = 1; // Volta para a lista
-            }
+            }   
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, @"IFSP Store", MessageBoxButtons.OK, MessageBoxIcon.Error);

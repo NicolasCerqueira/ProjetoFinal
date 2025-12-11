@@ -55,7 +55,7 @@ namespace IFSPStore.Repository.Migrations
                     Login = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false),
                     Senha = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false),
                     Email = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false),
-                    DataRegistro = table.Column<DateTime>(type: "datetime(6)", nullable: false, defaultValue: new DateTime(2025, 12, 10, 19, 38, 18, 73, DateTimeKind.Local).AddTicks(4283)),
+                    DataRegistro = table.Column<DateTime>(type: "datetime(6)", nullable: false, defaultValue: new DateTime(2025, 12, 10, 21, 0, 41, 362, DateTimeKind.Local).AddTicks(2136)),
                     UltimoLogin = table.Column<DateTime>(type: "datetime(6)", maxLength: 100, nullable: false),
                     Ativo = table.Column<bool>(type: "tinyint(1)", nullable: false)
                 },

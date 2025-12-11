@@ -149,7 +149,7 @@
             MainMenuStrip = menuStrip1;
             Name = "MainForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "IFSP Store";
+            Text = "DriveNow";
             WindowState = FormWindowState.Maximized;
             FormClosing += MainForm_FormClosing;
             menuStrip1.ResumeLayout(false);

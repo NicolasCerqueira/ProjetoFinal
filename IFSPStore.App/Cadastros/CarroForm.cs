@@ -12,7 +12,7 @@ namespace IFSPStore.App.Cadastros
         private readonly IBaseService<Carro> _carroServico;
         private readonly IBaseService<Categoria> _categoriaServico;
 
-        private List<CarroModel>? products;
+        private List<CarroModel>? carros;
 
         public CarroForm(IBaseService<Carro> carroServico, IBaseService<Categoria> categoriaServico)
         {
@@ -34,7 +34,7 @@ namespace IFSPStore.App.Cadastros
         {
             carro.Nome = txtNome.Text;
             carro.Placa = txtPlaca.Text;
-            carro.Modelo = txtModelo.Text;
+            carro.Modelo = cboModelo.Text;
             carro.Marca = txtMarca.Text;
             carro.Cor = txtCor.Text;
             carro.Status = cboStatus.Text;
@@ -67,11 +67,31 @@ namespace IFSPStore.App.Cadastros
         {
             try
             {
+                int id = 0;
                 if (IsEditMode)
                 {
-                    if (int.TryParse(txtId.Text, out var id))
+                    int.TryParse(txtId.Text, out id);
+                }
+
+                //todos os carros do banco 
+                var carrosExistentes = _carroServico.Get<Carro>();
+
+                // se existe algum carro com a mesma placa 
+                // nao compara o carro com ele mesmo (c.Id != id)
+                bool existePlaca = carrosExistentes.Any(c =>
+                    c.Placa.Trim().Equals(txtPlaca.Text.Trim(), StringComparison.CurrentCultureIgnoreCase)
+                    && c.Id != id);
+
+                if (existePlaca)
+                {
+                    MessageBox.Show("Já existe um carro cadastrado com esta Placa.", @"DriveNow", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return; // Interrompe o salvamento
+                }
+                if (IsEditMode)
+                {
+                    if (int.TryParse(txtId.Text, out var idCarro))
                     {
-                        var carro = _carroServico.GetById<Carro>(id);
+                        var carro = _carroServico.GetById<Carro>(idCarro);
                         PreencheObject(carro);
                         carro = _carroServico.Update<Carro, Carro, CarroValidator>(carro);
                     }
@@ -106,9 +126,9 @@ namespace IFSPStore.App.Cadastros
 
         protected override void CarregaGrid()
         {
-            products = _carroServico.Get<CarroModel>(new[] { "Categoria" }).ToList();
-            dataGridViewList.DataSource = products;
-            dataGridViewList.Columns["Nome"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            carros = _carroServico.Get<CarroModel>(new[] { "Categoria" }).ToList();
+            dataGridViewList.DataSource = carros;
+            dataGridViewList.Columns["Nome"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             if (dataGridViewList.Columns.Contains("CategoriaId"))
                 dataGridViewList.Columns["CategoriaId"].Visible = false;
         }
@@ -121,7 +141,7 @@ namespace IFSPStore.App.Cadastros
             txtNome.Text = linha.Cells["Nome"].Value.ToString();
             txtDiaria.Text = linha.Cells["Diaria"].Value.ToString();
             txtPlaca.Text = linha.Cells["Placa"].Value?.ToString();
-            txtModelo.Text = linha.Cells["Modelo"].Value?.ToString();
+            cboModelo.Text = linha.Cells["Modelo"].Value?.ToString();
             txtAno.Text = linha.Cells["Ano"].Value?.ToString();
             txtCor.Text = linha.Cells["Cor"].Value?.ToString();
             cboStatus.Text = linha.Cells["Status"].Value?.ToString();
@@ -131,7 +151,9 @@ namespace IFSPStore.App.Cadastros
 
             cboCategoria.SelectedValue = linha.Cells["CategoriaId"].Value;
 
-            txtDataAquisicao.Text = DateTime.Now.ToString("d");
+            txtDataAquisicao.Text = DateTime.TryParse(linha.Cells["DataAquisicao"].Value?.ToString(), out var dataC)
+               ? dataC.ToString("dd/MM/yyyy")
+               : "";
         }
     }
 }

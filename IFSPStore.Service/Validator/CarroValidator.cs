@@ -31,9 +31,6 @@ namespace IFSPStore.Service.Validator
             RuleFor(p => p.DataAquisicao)
                 .NotEmpty().NotNull()
                 .WithMessage("Data de aquisição deve ser maior que zero");
-            RuleFor(p => p.Disponivel)
-                .NotEmpty().NotNull()
-                .WithMessage("Disponibilidade deve ser informada");
             RuleFor(p => p.Status)
                 .NotEmpty().NotNull()
                 .WithMessage("Status deve ser informado");

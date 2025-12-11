@@ -32,7 +32,6 @@
             txtId = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             cboCategoria = new ReaLTaiizor.Controls.MaterialComboBox();
             txtPlaca = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
-            txtModelo = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             txtMarca = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             txtAno = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             txtCor = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
@@ -40,12 +39,14 @@
             txtDiaria = new ReaLTaiizor.Controls.MaterialMaskedTextBox();
             cboStatus = new ReaLTaiizor.Controls.MaterialComboBox();
             switch1 = new ReaLTaiizor.Controls.MaterialSwitch();
+            cboModelo = new ReaLTaiizor.Controls.MaterialComboBox();
             tabControlRegister.SuspendLayout();
             tabPage1.SuspendLayout();
             SuspendLayout();
             // 
             // tabPage1
             // 
+            tabPage1.Controls.Add(cboModelo);
             tabPage1.Controls.Add(switch1);
             tabPage1.Controls.Add(cboStatus);
             tabPage1.Controls.Add(txtDiaria);
@@ -53,7 +54,6 @@
             tabPage1.Controls.Add(txtCor);
             tabPage1.Controls.Add(txtAno);
             tabPage1.Controls.Add(txtMarca);
-            tabPage1.Controls.Add(txtModelo);
             tabPage1.Controls.Add(txtPlaca);
             tabPage1.Controls.Add(cboCategoria);
             tabPage1.Controls.Add(txtId);
@@ -62,7 +62,6 @@
             tabPage1.Controls.SetChildIndex(txtId, 0);
             tabPage1.Controls.SetChildIndex(cboCategoria, 0);
             tabPage1.Controls.SetChildIndex(txtPlaca, 0);
-            tabPage1.Controls.SetChildIndex(txtModelo, 0);
             tabPage1.Controls.SetChildIndex(txtMarca, 0);
             tabPage1.Controls.SetChildIndex(txtAno, 0);
             tabPage1.Controls.SetChildIndex(txtCor, 0);
@@ -70,6 +69,7 @@
             tabPage1.Controls.SetChildIndex(txtDiaria, 0);
             tabPage1.Controls.SetChildIndex(cboStatus, 0);
             tabPage1.Controls.SetChildIndex(switch1, 0);
+            tabPage1.Controls.SetChildIndex(cboModelo, 0);
             // 
             // txtNome
             // 
@@ -186,37 +186,6 @@
             txtPlaca.TextAlign = HorizontalAlignment.Left;
             txtPlaca.TrailingIcon = null;
             txtPlaca.UseSystemPasswordChar = false;
-            // 
-            // txtModelo
-            // 
-            txtModelo.AnimateReadOnly = false;
-            txtModelo.AutoCompleteMode = AutoCompleteMode.None;
-            txtModelo.AutoCompleteSource = AutoCompleteSource.None;
-            txtModelo.BackgroundImageLayout = ImageLayout.None;
-            txtModelo.CharacterCasing = CharacterCasing.Normal;
-            txtModelo.Depth = 0;
-            txtModelo.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            txtModelo.HideSelection = true;
-            txtModelo.Hint = "Modelo";
-            txtModelo.LeadingIcon = null;
-            txtModelo.Location = new Point(534, 60);
-            txtModelo.MaxLength = 32767;
-            txtModelo.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            txtModelo.Name = "txtModelo";
-            txtModelo.PasswordChar = '\0';
-            txtModelo.PrefixSuffixText = null;
-            txtModelo.ReadOnly = false;
-            txtModelo.RightToLeft = RightToLeft.No;
-            txtModelo.SelectedText = "";
-            txtModelo.SelectionLength = 0;
-            txtModelo.SelectionStart = 0;
-            txtModelo.ShortcutsEnabled = true;
-            txtModelo.Size = new Size(250, 48);
-            txtModelo.TabIndex = 14;
-            txtModelo.TabStop = false;
-            txtModelo.TextAlign = HorizontalAlignment.Left;
-            txtModelo.TrailingIcon = null;
-            txtModelo.UseSystemPasswordChar = false;
             // 
             // txtMarca
             // 
@@ -437,6 +406,30 @@
             switch1.UseAccentColor = false;
             switch1.UseVisualStyleBackColor = true;
             // 
+            // cboModelo
+            // 
+            cboModelo.AutoResize = false;
+            cboModelo.BackColor = Color.FromArgb(255, 255, 255);
+            cboModelo.Depth = 0;
+            cboModelo.DrawMode = DrawMode.OwnerDrawVariable;
+            cboModelo.DropDownHeight = 174;
+            cboModelo.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboModelo.DropDownWidth = 121;
+            cboModelo.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            cboModelo.ForeColor = Color.FromArgb(222, 0, 0, 0);
+            cboModelo.FormattingEnabled = true;
+            cboModelo.Hint = "Modelo";
+            cboModelo.IntegralHeight = false;
+            cboModelo.ItemHeight = 43;
+            cboModelo.Items.AddRange(new object[] { "", "Hatch", "Sedan", "SUV", "Picape", "Crossover", "Perua", "Minivan", "Cupê", "Conversível", "Esportivo" });
+            cboModelo.Location = new Point(534, 60);
+            cboModelo.MaxDropDownItems = 4;
+            cboModelo.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            cboModelo.Name = "cboModelo";
+            cboModelo.Size = new Size(248, 49);
+            cboModelo.StartIndex = 0;
+            cboModelo.TabIndex = 25;
+            // 
             // CarroForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -458,11 +451,11 @@
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtCor;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtAno;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtMarca;
-        private ReaLTaiizor.Controls.MaterialTextBoxEdit txtModelo;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtPlaca;
         private ReaLTaiizor.Controls.MaterialComboBox cboStatus;
         private ReaLTaiizor.Controls.MaterialMaskedTextBox txtDiaria;
         private ReaLTaiizor.Controls.MaterialMaskedTextBox txtDataAquisicao;
         private ReaLTaiizor.Controls.MaterialSwitch switch1;
+        private ReaLTaiizor.Controls.MaterialComboBox cboModelo;
     }
 }

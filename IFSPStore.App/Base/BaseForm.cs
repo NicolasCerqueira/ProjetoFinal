@@ -65,11 +65,25 @@ namespace IFSPStore.App.Base
             IsEditMode = false;
             foreach (var control in tabControlRegister.Controls)
             {
-                if (control is MaterialTextBoxEdit textBox)
+                if (control is ReaLTaiizor.Controls.MaterialTextBoxEdit textBox)
+                {
                     textBox.Clear();
+                }
 
-                if (control is MaterialMaskedTextBox maskedTextBox)
+                if (control is ReaLTaiizor.Controls.MaterialMaskedTextBox maskedTextBox)
+                {
                     maskedTextBox.Clear();
+                }
+
+                if (control is ReaLTaiizor.Controls.MaterialComboBox comboBox)
+                {
+                    comboBox.SelectedIndex = -1;
+                }
+
+                if (control is ReaLTaiizor.Controls.MaterialSwitch materialSwitch)
+                {
+                    materialSwitch.Checked = false;
+                }
             }
         }
 

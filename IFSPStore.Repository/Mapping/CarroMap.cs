@@ -29,8 +29,6 @@ namespace IFSPStore.Repository.Mapping
             builder.Property(prop => prop.Cor)
                 .IsRequired()
                 .HasMaxLength(100);
-            builder.Property(prop => prop.DataAquisicao)
-                .IsRequired();
             builder.Property(prop => prop.Disponivel)
                 .IsRequired();
             builder.Property(prop => prop.Status)
@@ -39,7 +37,7 @@ namespace IFSPStore.Repository.Mapping
             builder.HasOne(prop => prop.Categoria)
                 .WithMany()
                 .HasForeignKey(prop => prop.CategoriaId)
-                .HasConstraintName("nome_chave_estrangeira"); // relacionamento
+                .HasConstraintName("nome_chave_estrangeira");
         }
     }
 }

@@ -10,7 +10,7 @@ namespace IFSPStore.Domain.Entities
         }
         public Carro(int id, string nome, decimal diaria, string placa, 
             string modelo, string marca, int ano, string cor, DateTime dataAquisicao, 
-            bool disponivel, string status, Categoria category) : base(id)
+            bool disponivel, string status, Categoria categoria) : base(id)
         {
             Nome = nome;
             Diaria = diaria;
@@ -22,6 +22,7 @@ namespace IFSPStore.Domain.Entities
             DataAquisicao = dataAquisicao;
             Disponivel = disponivel;
             Status = status;
+            Categoria = categoria;
         }
 
         public string Nome { get; set; }

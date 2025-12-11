@@ -37,15 +37,23 @@ namespace IFSPStore.Repository.Repository
 
         public IList<TEntity> Select(IList<string>? includes = null)
         {
-            var dbContext = _mySqlContext.Set<TEntity>().AsQueryable();
-            if (includes != null)
+            try
             {
-                foreach (var include in includes)
+                var dbContext = _mySqlContext.Set<TEntity>().AsQueryable();
+                if (includes != null)
                 {
-                    dbContext = dbContext.Include(include);
+                    foreach (var include in includes)
+                    {
+                        dbContext = dbContext.Include(include);
+                    }
                 }
+                return dbContext.ToList();
             }
-            return dbContext.ToList();
+            //isso serve para ajuudar a achar os erros - onde estao acontecendo
+            catch (Exception ex)
+            {
+                throw new Exception($"Erro ao selecionar dados: {ex.InnerException?.Message ?? ex.Message}");
+            }
         }
         public TEntity Select(object id, IList<string>? includes = null)
         {

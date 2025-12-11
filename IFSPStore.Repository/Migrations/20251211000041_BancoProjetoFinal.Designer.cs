@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace IFSPStore.Repository.Migrations
 {
     [DbContext(typeof(MySqlContext))]
-    [Migration("20251210223818_BancoProjetoFinal")]
+    [Migration("20251211000041_BancoProjetoFinal")]
     partial class BancoProjetoFinal
     {
         /// <inheritdoc />
@@ -204,7 +204,7 @@ namespace IFSPStore.Repository.Migrations
                     b.Property<DateTime>("DataRegistro")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime(6)")
-                        .HasDefaultValue(new DateTime(2025, 12, 10, 19, 38, 18, 73, DateTimeKind.Local).AddTicks(4283));
+                        .HasDefaultValue(new DateTime(2025, 12, 10, 21, 0, 41, 362, DateTimeKind.Local).AddTicks(2136));
 
                     b.Property<string>("Email")
                         .IsRequired()

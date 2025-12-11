@@ -32,8 +32,11 @@ namespace IFSPStore.App.Cadastros
 
         private void PreencheObject(Carro carro)
         {
+            string placa = txtPlaca.Text;
+            placa = placa.ToUpper();
+
             carro.Nome = txtNome.Text;
-            carro.Placa = txtPlaca.Text;
+            carro.Placa = placa;
             carro.Modelo = cboModelo.Text;
             carro.Marca = txtMarca.Text;
             carro.Cor = txtCor.Text;

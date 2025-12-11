@@ -24,9 +24,6 @@ namespace IFSPStore.Service.Validator
                 .WithMessage("Data de registro obrigatória");
             RuleFor(c => c.UltimoLogin)
                 .NotEmpty().NotNull();
-            RuleFor(c => c.Ativo)
-                .NotEmpty().NotNull()
-                .WithMessage("Status do usuário obrigatório");
         }
     }
 }

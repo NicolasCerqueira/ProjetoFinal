@@ -55,7 +55,7 @@ namespace IFSPStore.App.Infra
             services.AddTransient<ClienteForm, ClienteForm>();
             services.AddTransient<CarroForm, CarroForm>();
             services.AddTransient<SaleForm, SaleForm>();
-            services.AddTransient<UserForm, UserForm>();
+            services.AddTransient<FuncionarioForm, FuncionarioForm>();
             services.AddTransient<HelpForm, HelpForm>();
 
             services.AddSingleton(

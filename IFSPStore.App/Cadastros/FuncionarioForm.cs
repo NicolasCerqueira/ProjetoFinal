@@ -6,27 +6,31 @@ using IFSPStore.Service.Validator;
 
 namespace IFSPStore.App.Cadastros
 {
-    public partial class UserForm : BaseForm
+    public partial class FuncionarioForm : BaseForm
     {
-        private readonly IBaseService<Funcionario> _userService;
-        private List<FuncionarioModel>? users;
-        public UserForm(IBaseService<Funcionario> userService)
+        private readonly IBaseService<Funcionario> _usuarioServico;
+        private List<FuncionarioModel>? usuarios;
+        public FuncionarioForm(IBaseService<Funcionario> userService)
         {
-            _userService = userService;
+            _usuarioServico = userService;
             InitializeComponent();
-            txtRegistrationDate.Text = DateTime.Now.ToString("g");
+            if (!IsEditMode)
+            {
+                txtDataRegistro.Text = DateTime.Now.ToString("g");
+                txtUltimoLogin.Text = DateTime.Now.ToString("g");
+            }
         }
         private void PreencheObjeto(Funcionario user)
         {
-            user.Nome = txtName.Text;
+            user.Nome = txtNome.Text;
             user.Email = txtEmail.Text;
-            user.Login = txtLogin.Text;
-            user.Senha = txtPassword.Text;
-            user.Ativo = chkActive.Checked;
+            user.Login = txtUsuario.Text;
+            user.Senha = txtSenha.Text;
+            user.Ativo = chkAtivo.Checked;
             if (user.Id == 0)
             {
                 user.DataRegistro = DateTime.Now;
-                user.UltimoLogin = DateTime.Now; // Valor inicial
+                user.UltimoLogin = DateTime.Now; 
             }
         }
 
@@ -39,11 +43,11 @@ namespace IFSPStore.App.Cadastros
                     // MODO EDIÇÃO
                     if (int.TryParse(txtId.Text, out var id))
                     {
-                        var user = _userService.GetById<Funcionario>(id);
+                        var user = _usuarioServico.GetById<Funcionario>(id);
                         if (user != null)
                         {
                             PreencheObjeto(user);
-                            user = _userService.Update<Funcionario, Funcionario, FuncionarioValidator>(user);
+                            user = _usuarioServico.Update<Funcionario, Funcionario, FuncionarioValidator>(user);
                         }
                         else
                         {
@@ -53,17 +57,16 @@ namespace IFSPStore.App.Cadastros
                 }
                 else
                 {
-                    // MODO NOVO
                     var user = new Funcionario();
                     PreencheObjeto(user);
-                    _userService.Add<Funcionario, Funcionario, FuncionarioValidator>(user);
+                    _usuarioServico.Add<Funcionario, Funcionario, FuncionarioValidator>(user);
                 }
                 CarregaGrid();
                 tabControlRegister.SelectedIndex = 1; // Volta para a lista
             }   
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, @"IFSP Store", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, @"DriveNow", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -71,36 +74,36 @@ namespace IFSPStore.App.Cadastros
         {
             try
             {
-                _userService.Delete(id);
+                _usuarioServico.Delete(id);
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, @"IFSP Store", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, @"DriveNow", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         protected override void CarregaGrid()
         {
-            users = _userService.Get<FuncionarioModel>().ToList();
-            dataGridViewList.DataSource = users;
-            dataGridViewList.Columns["Password"]!.Visible = false;
+            usuarios = _usuarioServico.Get<FuncionarioModel>().ToList();
+            dataGridViewList.DataSource = usuarios;
+            dataGridViewList.Columns["Senha"]!.Visible = false;
             dataGridViewList.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
 
         protected override void loadList(DataGridViewRow? linha)
         {
             txtId.Text = linha?.Cells["Id"].Value.ToString();
-            txtName.Text = linha?.Cells["Name"].Value.ToString();
+            txtNome.Text = linha?.Cells["Nome"].Value.ToString();
             txtEmail.Text = linha?.Cells["Email"].Value.ToString();
-            txtLogin.Text = linha?.Cells["Login"].Value.ToString();
-            txtPassword.Text = linha?.Cells["Password"].Value.ToString();
-            chkActive.Checked = (bool)(linha?.Cells["IsActive"].Value ?? false);
+            txtUsuario.Text = linha?.Cells["Login"].Value.ToString();
+            txtSenha.Text = linha?.Cells["Senha"].Value.ToString();
+            chkAtivo.Checked = (bool)(linha?.Cells["Ativo"].Value ?? false);
 
-            txtRegistrationDate.Text = DateTime.TryParse(linha?.Cells["RegisterDate"].Value.ToString(), out var dataC)
+            txtDataRegistro.Text = DateTime.TryParse(linha?.Cells["DataRegistro"].Value.ToString(), out var dataC)
                 ? dataC.ToString("g")
                 : "";
 
-            txtLastLogin.Text = DateTime.TryParse(linha?.Cells["LoginDate"].Value.ToString(), out var dataL)
+            txtUltimoLogin.Text = DateTime.TryParse(linha?.Cells["UltimoLogin"].Value.ToString(), out var dataL)
                 ? dataL.ToString("g")
                 : "";
         }
@@ -109,13 +112,13 @@ namespace IFSPStore.App.Cadastros
             if (row != null)
             {
                 txtId.Text = row.Cells["Id"].Value.ToString();
-                txtName.Text = row.Cells["Name"].Value.ToString();
+                txtNome.Text = row.Cells["Nome"].Value.ToString();
                 txtEmail.Text = row.Cells["Email"].Value.ToString();
-                txtLogin.Text = row.Cells["login"].Value.ToString();
+                txtUsuario.Text = row.Cells["Login"].Value.ToString();
 
-                if (row.Cells["IsActive"].Value != null)
+                if (row.Cells["Ativo"].Value != null)
                 {
-                    chkActive.Checked = (bool)row.Cells["IsActive"].Value;
+                    chkAtivo.Checked = (bool)row.Cells["Ativo"].Value;
                 }
             }
         }

@@ -52,7 +52,7 @@ namespace IFSPStore.App
         }
         private void userToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            showForm<UserForm>();
+            showForm<FuncionarioForm>();
         }
 
 

@@ -12,7 +12,7 @@ namespace IFSPStore.App.Models
         public Funcionario? Funcionario { get; set; }
         public int ClienteId { get; set; }
         public Cliente? Cliente { get; set; }
-        public List<CarrosAlugadosModel> CarrosAlugados { get; set; }
+        public List<CarrosAlugadosModel>? CarrosAlugados { get; set; }
 
     }
     public class CarrosAlugadosModel

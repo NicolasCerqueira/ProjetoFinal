@@ -28,7 +28,18 @@ namespace IFSPStore.App.Outros
             Funcionario? user = searchUser(txtUsuario.Text, txtSenha.Text);
             if (user != null)
             {
-                MainForm.User = user; 
+                if (!user.Ativo)
+                {
+                    MessageBox.Show("Este usuário está inativo.",
+                                    "DriveNow", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+            }
+            if (user != null)
+            {
+                user.UltimoLogin = DateTime.Now;
+                _usuarioServico.Update<Funcionario, Funcionario, FuncionarioValidator>(user); MainForm.User = user; 
+
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
@@ -44,6 +55,7 @@ namespace IFSPStore.App.Outros
                 .FirstOrDefault();
             return user;
         }
+
         private void checkValidUser()
         {
             var users = _usuarioServico.Get<Funcionario>().ToList();

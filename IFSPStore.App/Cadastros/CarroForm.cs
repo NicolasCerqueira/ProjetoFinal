@@ -82,10 +82,10 @@ namespace IFSPStore.App.Cadastros
                     c.Placa.Trim().Equals(txtPlaca.Text.Trim(), StringComparison.CurrentCultureIgnoreCase)
                     && c.Id != id);
 
-                if (existePlaca)
+                if (existePlaca && !IsEditMode)
                 {
                     MessageBox.Show("Já existe um carro cadastrado com esta Placa.", @"DriveNow", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return; // Interrompe o salvamento
+                    return;
                 }
                 if (IsEditMode)
                 {

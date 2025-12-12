@@ -102,7 +102,7 @@ namespace IFSPStore.Repository.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
                     Nome = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false),
-                    Cnh = table.Column<int>(type: "int", maxLength: 100, nullable: false),
+                    CNH = table.Column<int>(type: "int", maxLength: 100, nullable: false),
                     Endereco = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false),
                     Documento = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false),
                     Bairro = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false),

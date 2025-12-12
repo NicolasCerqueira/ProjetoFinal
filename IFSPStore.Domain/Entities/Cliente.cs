@@ -12,7 +12,7 @@ namespace IFSPStore.Domain.Entities
             Cidade cidade) : base(id)
         {
             Nome = nome;
-            Cnh = cnh;
+            CNH = cnh;
             Endereco = endereco;
             Documento = documento;
             Bairro = bairro;
@@ -20,7 +20,7 @@ namespace IFSPStore.Domain.Entities
         }
 
         public string? Nome { get; set; }
-        public int Cnh { get; set; }
+        public int CNH { get; set; }
         public string? Endereco { get; set; }
         public string? Documento { get; set; }
         public string? Bairro { get; set; }

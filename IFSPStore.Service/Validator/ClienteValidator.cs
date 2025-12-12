@@ -10,7 +10,7 @@ namespace IFSPStore.Service.Validator
             RuleFor(c => c.Nome)
                .NotEmpty().NotNull()
                .WithMessage("Por favor informe o nome.");
-            RuleFor(c => c.Cnh)
+            RuleFor(c => c.CNH)
                 .NotEmpty().NotNull()
                 .WithMessage("Por favor informe a CNH.");
             RuleFor(c => c.Endereco)

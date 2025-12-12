@@ -13,7 +13,7 @@ namespace IFSPStore.Repository.Mapping
             builder.Property(prop => prop.Nome)
                 .IsRequired()
                 .HasMaxLength(100);
-            builder.Property(prop => prop.Cnh)
+            builder.Property(prop => prop.CNH)
                 .IsRequired()
                 .HasMaxLength(100);
             builder.Property(prop => prop.Endereco)

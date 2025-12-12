@@ -36,7 +36,7 @@ namespace IFSPStore.App.Infra
             services.AddScoped<IBaseRepository<Cidade>, BaseRepository<Cidade>>();
             services.AddScoped<IBaseRepository<Cliente>, BaseRepository<Cliente>>();
             services.AddScoped<IBaseRepository<Carro>, BaseRepository<Carro>>();
-            services.AddScoped<IBaseRepository<Domain.Entities.Locacao>, BaseRepository<Domain.Entities.Locacao>>();
+            services.AddScoped<IBaseRepository<Locacao>, BaseRepository<Locacao>>();
             services.AddScoped<IBaseRepository<CarrosAlugados>, BaseRepository<CarrosAlugados>>();
 
             // Services
@@ -45,7 +45,7 @@ namespace IFSPStore.App.Infra
             services.AddScoped<IBaseService<Cidade>, BaseService<Cidade>>();
             services.AddScoped<IBaseService<Cliente>, BaseService<Cliente>>();
             services.AddScoped<IBaseService<Carro>, BaseService<Carro>>();
-            services.AddScoped<IBaseService<Domain.Entities.Locacao>, BaseService<Domain.Entities.Locacao>>();
+            services.AddScoped<IBaseService<Locacao>, BaseService<Locacao>>();
             services.AddScoped<IBaseService<CarrosAlugados>, BaseService<CarrosAlugados>>();
 
             //Formularios
@@ -54,7 +54,7 @@ namespace IFSPStore.App.Infra
             services.AddTransient<CidadeForm, CidadeForm>();
             services.AddTransient<ClienteForm, ClienteForm>();
             services.AddTransient<CarroForm, CarroForm>();
-            services.AddTransient<SaleForm, SaleForm>();
+            services.AddTransient<SaleForm, SaleForm>();//so falta terminar esse
             services.AddTransient<FuncionarioForm, FuncionarioForm>();
             services.AddTransient<HelpForm, HelpForm>();
 
@@ -63,7 +63,7 @@ namespace IFSPStore.App.Infra
                     config.CreateMap<Categoria, CategoriaModel>();
                     config.CreateMap<Funcionario, FuncionarioModel>();
                     config.CreateMap<Carro, CarroModel>()
-                        .ForMember(d => d.Categoria, d => d.MapFrom(x => x.Categoria!.Nome))
+                        .ForMember(d => d.Categoria, d => d.MapFrom(x => x.Categoria!.Nome))// para aparecer o nome no cbo
                         .ForMember(d => d.CategoriaId, d => d.MapFrom(x => x.CategoriaId));
                     config.CreateMap<Cliente, ClienteModel>()
                         .ForMember(d => d.Cidade, d => d.MapFrom(x => x.Cidade!.Nome))

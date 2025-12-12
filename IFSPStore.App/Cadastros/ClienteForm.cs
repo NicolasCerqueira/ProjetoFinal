@@ -37,9 +37,9 @@ namespace IFSPStore.App.Cadastros
             cidade.Documento = txtDocumento.Text;
 
             if (int.TryParse(txtCnh.Text, out int cnh))
-                cidade.Cnh = cnh;
+                cidade.CNH = cnh;
             else
-                cidade.Cnh = 0;
+                cidade.CNH = 0;
 
             if (cboCidade.SelectedValue != null && int.TryParse(cboCidade.SelectedValue.ToString(), out var idCity))
             {
@@ -61,7 +61,7 @@ namespace IFSPStore.App.Cadastros
                 if (int.TryParse(txtCnh.Text, out int cnhDigitada))
                 {
                     
-                    if (clientesExistentes.Any(c => c.Cnh == cnhDigitada && c.Id != id))
+                    if (clientesExistentes.Any(c => c.CNH == cnhDigitada && c.Id != id))
                     {
                         MessageBox.Show("Já existe um cliente cadastrado com esta CNH.", @"DriveNow", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
@@ -84,9 +84,9 @@ namespace IFSPStore.App.Cadastros
                 }
                 else
                 {
-                    var customer = new Cliente();
-                    preencheObject(customer);
-                    _clienteServico.Add<Cliente, Cliente, ClienteValidator>(customer);
+                    var cliente = new Cliente();
+                    preencheObject(cliente);
+                    _clienteServico.Add<Cliente, Cliente, ClienteValidator>(cliente);
                 }
 
                 CarregaGrid();
@@ -127,8 +127,8 @@ namespace IFSPStore.App.Cadastros
             txtBairro.Text = record.Cells["Bairro"].Value?.ToString();
             txtDocumento.Text = record.Cells["Documento"].Value?.ToString();
 
-            if (record.Cells["Cnh"].Value != null)
-                txtCnh.Text = record.Cells["Cnh"].Value.ToString();
+            if (record.Cells["CNH"].Value != null)
+                txtCnh.Text = record.Cells["CNH"].Value.ToString();
 
             cboCidade.SelectedValue = record.Cells["CidadeId"].Value;
         }

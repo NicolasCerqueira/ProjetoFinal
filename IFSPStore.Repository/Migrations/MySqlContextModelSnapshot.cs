@@ -163,7 +163,7 @@ namespace IFSPStore.Repository.Migrations
                     b.Property<int>("CidadeId")
                         .HasColumnType("int");
 
-                    b.Property<int>("Cnh")
+                    b.Property<int>("CNH")
                         .HasMaxLength(100)
                         .HasColumnType("int");
 

@@ -3,8 +3,6 @@ using IFSPStore.Domain.Entities;
 using IFSPStore.Service.Validator;
 using ReaLTaiizor.Forms;
 using System.Data;
-using System.Linq;
-
 namespace IFSPStore.App.Outros
 {
     public partial class Login : MaterialForm

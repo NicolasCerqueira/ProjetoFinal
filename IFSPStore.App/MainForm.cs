@@ -44,7 +44,7 @@ namespace IFSPStore.App
         }
         private void saleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //showForm<SaleForm>();
+            showForm<LocacaoForm>();
         }
         private void cityToolStripMenuItem_Click(object sender, EventArgs e)
         {

@@ -4,14 +4,15 @@ namespace IFSPStore.App.Models
 {
     public class LocacaoModel
     {
+        public int Id { get; set; }
         public DateTime DataLocacao { get; set; }
         public DateTime DataDevolucao { get; set; }
         public decimal ValorTotal { get; set; }
         public int NumDiarias { get; set; }
         public int FuncionarioId { get; set; }
-        public Funcionario? Funcionario { get; set; }
+        public string? Funcionario { get; set; }
         public int ClienteId { get; set; }
-        public Cliente? Cliente { get; set; }
+        public string? Cliente { get; set; }
         public List<CarrosAlugadosModel>? CarrosAlugados { get; set; }
 
     }

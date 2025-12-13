@@ -54,7 +54,7 @@ namespace IFSPStore.App.Infra
             services.AddTransient<CidadeForm, CidadeForm>();
             services.AddTransient<ClienteForm, ClienteForm>();
             services.AddTransient<CarroForm, CarroForm>();
-            services.AddTransient<SaleForm, SaleForm>();//so falta terminar esse
+            services.AddTransient<LocacaoForm, LocacaoForm>();//so falta terminar esse
             services.AddTransient<FuncionarioForm, FuncionarioForm>();
             services.AddTransient<HelpForm, HelpForm>();
 
@@ -66,10 +66,14 @@ namespace IFSPStore.App.Infra
                         .ForMember(d => d.Categoria, d => d.MapFrom(x => x.Categoria!.Nome))// para aparecer o nome no cbo
                         .ForMember(d => d.CategoriaId, d => d.MapFrom(x => x.CategoriaId));
                     config.CreateMap<Cliente, ClienteModel>()
+                        .ForMember(d => d.Nome, d => d.MapFrom(x => x.Nome))
                         .ForMember(d => d.Cidade, d => d.MapFrom(x => x.Cidade!.Nome))
                         .ForMember(d => d.CidadeId, d => d.MapFrom(x => x.CidadeId)); ;
                     config.CreateMap<Cidade, CidadeModel>();
-                    config.CreateMap<Locacao, LocacaoModel>();
+                    config.CreateMap<Locacao, LocacaoModel>()
+                        .ForMember(d => d.Funcionario, d => d.MapFrom(x => x.Funcionario!.Nome)) //se aparecer no datagridview domain entities e isso
+                        .ForMember(d => d.Cliente, d => d.MapFrom(x => x.Cliente!.Nome));    
+                    config.CreateMap<CarrosAlugados, CarrosAlugadosModel>();
 
                     config.CreateMap<Funcionario, Funcionario>();        
                     config.CreateMap<Categoria, Categoria>(); 

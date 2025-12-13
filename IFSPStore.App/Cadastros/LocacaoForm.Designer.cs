@@ -1,6 +1,6 @@
 ﻿namespace IFSPStore.App.Cadastros
 {
-    partial class SaleForm
+    partial class LocacaoForm
     {
         /// <summary>
         /// Required designer variable.
@@ -32,22 +32,22 @@
             cboFuncionario = new ReaLTaiizor.Controls.MaterialComboBox();
             txtId = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             cboCliente = new ReaLTaiizor.Controls.MaterialComboBox();
-            groupBoxItens = new GroupBox();
-            btnExcluir = new ReaLTaiizor.Controls.MaterialButton();
-            cboCategoria = new ReaLTaiizor.Controls.MaterialComboBox();
-            txtDiarias = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
-            dataGridViewItens = new DataGridView();
-            btnAdd = new ReaLTaiizor.Controls.MaterialButton();
-            txtPrecoTotal = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
-            txtPreco = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             cboCarro = new ReaLTaiizor.Controls.MaterialComboBox();
             lblQtdItens = new ReaLTaiizor.Controls.MaterialLabel();
             lblTotalPrice = new ReaLTaiizor.Controls.MaterialLabel();
             txtDataDevolucao = new ReaLTaiizor.Controls.MaterialMaskedTextBox();
+            txtPreco = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
+            txtPrecoTotal = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
+            btnAdd = new ReaLTaiizor.Controls.MaterialButton();
+            dataGridViewItens = new DataGridView();
+            txtDiarias = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
+            cboCategoria = new ReaLTaiizor.Controls.MaterialComboBox();
+            btnExcluir = new ReaLTaiizor.Controls.MaterialButton();
+            groupBoxItens = new GroupBox();
             tabControlRegister.SuspendLayout();
             tabPage1.SuspendLayout();
-            groupBoxItens.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewItens).BeginInit();
+            groupBoxItens.SuspendLayout();
             SuspendLayout();
             // 
             // tabPage2
@@ -122,6 +122,7 @@
             txtDataLocacao.TrailingIcon = null;
             txtDataLocacao.UseSystemPasswordChar = false;
             txtDataLocacao.ValidatingType = null;
+            txtDataLocacao.Leave += this.CalcularDiarias;
             // 
             // cboFuncionario
             // 
@@ -201,192 +202,6 @@
             cboCliente.StartIndex = 0;
             cboCliente.TabIndex = 6;
             // 
-            // groupBoxItens
-            // 
-            groupBoxItens.Controls.Add(btnExcluir);
-            groupBoxItens.Controls.Add(cboCategoria);
-            groupBoxItens.Controls.Add(txtDiarias);
-            groupBoxItens.Controls.Add(dataGridViewItens);
-            groupBoxItens.Controls.Add(btnAdd);
-            groupBoxItens.Controls.Add(txtPrecoTotal);
-            groupBoxItens.Controls.Add(txtPreco);
-            groupBoxItens.Location = new Point(6, 115);
-            groupBoxItens.Name = "groupBoxItens";
-            groupBoxItens.Size = new Size(778, 428);
-            groupBoxItens.TabIndex = 7;
-            groupBoxItens.TabStop = false;
-            groupBoxItens.Text = "SaleItens";
-            // 
-            // btnExcluir
-            // 
-            btnExcluir.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            btnExcluir.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
-            btnExcluir.Depth = 0;
-            btnExcluir.HighEmphasis = true;
-            btnExcluir.Icon = null;
-            btnExcluir.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            btnExcluir.Location = new Point(595, 73);
-            btnExcluir.Margin = new Padding(4, 6, 4, 6);
-            btnExcluir.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            btnExcluir.Name = "btnExcluir";
-            btnExcluir.NoAccentTextColor = Color.Empty;
-            btnExcluir.Size = new Size(79, 36);
-            btnExcluir.TabIndex = 8;
-            btnExcluir.Text = "Apagar";
-            btnExcluir.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
-            btnExcluir.UseAccentColor = false;
-            btnExcluir.UseVisualStyleBackColor = true;
-            // 
-            // cboCategoria
-            // 
-            cboCategoria.AutoResize = false;
-            cboCategoria.BackColor = Color.FromArgb(255, 255, 255);
-            cboCategoria.Depth = 0;
-            cboCategoria.DrawMode = DrawMode.OwnerDrawVariable;
-            cboCategoria.DropDownHeight = 174;
-            cboCategoria.DropDownStyle = ComboBoxStyle.DropDownList;
-            cboCategoria.DropDownWidth = 121;
-            cboCategoria.Enabled = false;
-            cboCategoria.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
-            cboCategoria.ForeColor = Color.FromArgb(222, 0, 0, 0);
-            cboCategoria.FormattingEnabled = true;
-            cboCategoria.Hint = "Category";
-            cboCategoria.IntegralHeight = false;
-            cboCategoria.ItemHeight = 43;
-            cboCategoria.Location = new Point(82, 19);
-            cboCategoria.MaxDropDownItems = 4;
-            cboCategoria.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            cboCategoria.Name = "cboCategoria";
-            cboCategoria.Size = new Size(238, 49);
-            cboCategoria.StartIndex = 0;
-            cboCategoria.TabIndex = 7;
-            // 
-            // txtDiarias
-            // 
-            txtDiarias.AnimateReadOnly = false;
-            txtDiarias.AutoCompleteMode = AutoCompleteMode.None;
-            txtDiarias.AutoCompleteSource = AutoCompleteSource.None;
-            txtDiarias.BackgroundImageLayout = ImageLayout.None;
-            txtDiarias.CharacterCasing = CharacterCasing.Normal;
-            txtDiarias.Depth = 0;
-            txtDiarias.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            txtDiarias.HideSelection = true;
-            txtDiarias.Hint = "Diarias";
-            txtDiarias.LeadingIcon = null;
-            txtDiarias.Location = new Point(326, 19);
-            txtDiarias.MaxLength = 32767;
-            txtDiarias.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            txtDiarias.Name = "txtDiarias";
-            txtDiarias.PasswordChar = '\0';
-            txtDiarias.PrefixSuffixText = null;
-            txtDiarias.ReadOnly = false;
-            txtDiarias.RightToLeft = RightToLeft.No;
-            txtDiarias.SelectedText = "";
-            txtDiarias.SelectionLength = 0;
-            txtDiarias.SelectionStart = 0;
-            txtDiarias.ShortcutsEnabled = true;
-            txtDiarias.Size = new Size(238, 48);
-            txtDiarias.TabIndex = 6;
-            txtDiarias.TabStop = false;
-            txtDiarias.TextAlign = HorizontalAlignment.Left;
-            txtDiarias.TrailingIcon = null;
-            txtDiarias.UseSystemPasswordChar = false;
-            // 
-            // dataGridViewItens
-            // 
-            dataGridViewItens.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewItens.Location = new Point(6, 130);
-            dataGridViewItens.MultiSelect = false;
-            dataGridViewItens.Name = "dataGridViewItens";
-            dataGridViewItens.ReadOnly = true;
-            dataGridViewItens.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridViewItens.Size = new Size(766, 276);
-            dataGridViewItens.TabIndex = 5;
-            // 
-            // btnAdd
-            // 
-            btnAdd.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            btnAdd.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
-            btnAdd.Depth = 0;
-            btnAdd.HighEmphasis = true;
-            btnAdd.Icon = null;
-            btnAdd.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            btnAdd.Location = new Point(585, 25);
-            btnAdd.Margin = new Padding(4, 6, 4, 6);
-            btnAdd.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            btnAdd.Name = "btnAdd";
-            btnAdd.NoAccentTextColor = Color.Empty;
-            btnAdd.Size = new Size(98, 36);
-            btnAdd.TabIndex = 4;
-            btnAdd.Text = "Adicionar";
-            btnAdd.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
-            btnAdd.UseAccentColor = false;
-            btnAdd.UseVisualStyleBackColor = true;
-            // 
-            // txtPrecoTotal
-            // 
-            txtPrecoTotal.AnimateReadOnly = false;
-            txtPrecoTotal.AutoCompleteMode = AutoCompleteMode.None;
-            txtPrecoTotal.AutoCompleteSource = AutoCompleteSource.None;
-            txtPrecoTotal.BackgroundImageLayout = ImageLayout.None;
-            txtPrecoTotal.CharacterCasing = CharacterCasing.Normal;
-            txtPrecoTotal.Depth = 0;
-            txtPrecoTotal.Enabled = false;
-            txtPrecoTotal.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            txtPrecoTotal.HideSelection = true;
-            txtPrecoTotal.Hint = "Preço total";
-            txtPrecoTotal.LeadingIcon = null;
-            txtPrecoTotal.Location = new Point(326, 73);
-            txtPrecoTotal.MaxLength = 32767;
-            txtPrecoTotal.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            txtPrecoTotal.Name = "txtPrecoTotal";
-            txtPrecoTotal.PasswordChar = '\0';
-            txtPrecoTotal.PrefixSuffixText = null;
-            txtPrecoTotal.ReadOnly = false;
-            txtPrecoTotal.RightToLeft = RightToLeft.No;
-            txtPrecoTotal.SelectedText = "";
-            txtPrecoTotal.SelectionLength = 0;
-            txtPrecoTotal.SelectionStart = 0;
-            txtPrecoTotal.ShortcutsEnabled = true;
-            txtPrecoTotal.Size = new Size(238, 48);
-            txtPrecoTotal.TabIndex = 3;
-            txtPrecoTotal.TabStop = false;
-            txtPrecoTotal.TextAlign = HorizontalAlignment.Left;
-            txtPrecoTotal.TrailingIcon = null;
-            txtPrecoTotal.UseSystemPasswordChar = false;
-            // 
-            // txtPreco
-            // 
-            txtPreco.AnimateReadOnly = false;
-            txtPreco.AutoCompleteMode = AutoCompleteMode.None;
-            txtPreco.AutoCompleteSource = AutoCompleteSource.None;
-            txtPreco.BackgroundImageLayout = ImageLayout.None;
-            txtPreco.CharacterCasing = CharacterCasing.Normal;
-            txtPreco.Depth = 0;
-            txtPreco.Enabled = false;
-            txtPreco.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            txtPreco.HideSelection = true;
-            txtPreco.Hint = "Preço da diaria";
-            txtPreco.LeadingIcon = null;
-            txtPreco.Location = new Point(82, 73);
-            txtPreco.MaxLength = 32767;
-            txtPreco.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            txtPreco.Name = "txtPreco";
-            txtPreco.PasswordChar = '\0';
-            txtPreco.PrefixSuffixText = null;
-            txtPreco.ReadOnly = false;
-            txtPreco.RightToLeft = RightToLeft.No;
-            txtPreco.SelectedText = "";
-            txtPreco.SelectionLength = 0;
-            txtPreco.SelectionStart = 0;
-            txtPreco.ShortcutsEnabled = true;
-            txtPreco.Size = new Size(238, 48);
-            txtPreco.TabIndex = 2;
-            txtPreco.TabStop = false;
-            txtPreco.TextAlign = HorizontalAlignment.Left;
-            txtPreco.TrailingIcon = null;
-            txtPreco.UseSystemPasswordChar = false;
-            // 
             // cboCarro
             // 
             cboCarro.AutoResize = false;
@@ -409,6 +224,7 @@
             cboCarro.Size = new Size(320, 49);
             cboCarro.StartIndex = 0;
             cboCarro.TabIndex = 0;
+            cboCarro.SelectedValueChanged += cboCarro_SelectedValueChanged;
             // 
             // lblQtdItens
             // 
@@ -418,9 +234,9 @@
             lblQtdItens.Location = new Point(12, 524);
             lblQtdItens.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             lblQtdItens.Name = "lblQtdItens";
-            lblQtdItens.Size = new Size(145, 19);
+            lblQtdItens.Size = new Size(183, 19);
             lblQtdItens.TabIndex = 8;
-            lblQtdItens.Text = "Quantity Products: 0";
+            lblQtdItens.Text = "Quantidade de veiculos: 0";
             // 
             // lblTotalPrice
             // 
@@ -430,9 +246,9 @@
             lblTotalPrice.Location = new Point(352, 524);
             lblTotalPrice.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             lblTotalPrice.Name = "lblTotalPrice";
-            lblTotalPrice.Size = new Size(94, 19);
+            lblTotalPrice.Size = new Size(140, 19);
             lblTotalPrice.TabIndex = 9;
-            lblTotalPrice.Text = "Total Price: 0";
+            lblTotalPrice.Text = "Valor Total: R$ 0,00";
             // 
             // txtDataDevolucao
             // 
@@ -476,22 +292,213 @@
             txtDataDevolucao.TrailingIcon = null;
             txtDataDevolucao.UseSystemPasswordChar = false;
             txtDataDevolucao.ValidatingType = null;
+            txtDataDevolucao.Leave += this.CalcularDiarias;
             // 
-            // SaleForm
+            // txtPreco
+            // 
+            txtPreco.AnimateReadOnly = false;
+            txtPreco.AutoCompleteMode = AutoCompleteMode.None;
+            txtPreco.AutoCompleteSource = AutoCompleteSource.None;
+            txtPreco.BackgroundImageLayout = ImageLayout.None;
+            txtPreco.CharacterCasing = CharacterCasing.Normal;
+            txtPreco.Depth = 0;
+            txtPreco.Enabled = false;
+            txtPreco.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtPreco.HideSelection = true;
+            txtPreco.Hint = "Preço da diaria";
+            txtPreco.LeadingIcon = null;
+            txtPreco.Location = new Point(82, 73);
+            txtPreco.MaxLength = 32767;
+            txtPreco.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            txtPreco.Name = "txtPreco";
+            txtPreco.PasswordChar = '\0';
+            txtPreco.PrefixSuffixText = null;
+            txtPreco.ReadOnly = false;
+            txtPreco.RightToLeft = RightToLeft.No;
+            txtPreco.SelectedText = "";
+            txtPreco.SelectionLength = 0;
+            txtPreco.SelectionStart = 0;
+            txtPreco.ShortcutsEnabled = true;
+            txtPreco.Size = new Size(238, 48);
+            txtPreco.TabIndex = 2;
+            txtPreco.TabStop = false;
+            txtPreco.TextAlign = HorizontalAlignment.Left;
+            txtPreco.TrailingIcon = null;
+            txtPreco.UseSystemPasswordChar = false;
+            // 
+            // txtPrecoTotal
+            // 
+            txtPrecoTotal.AnimateReadOnly = false;
+            txtPrecoTotal.AutoCompleteMode = AutoCompleteMode.None;
+            txtPrecoTotal.AutoCompleteSource = AutoCompleteSource.None;
+            txtPrecoTotal.BackgroundImageLayout = ImageLayout.None;
+            txtPrecoTotal.CharacterCasing = CharacterCasing.Normal;
+            txtPrecoTotal.Depth = 0;
+            txtPrecoTotal.Enabled = false;
+            txtPrecoTotal.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtPrecoTotal.HideSelection = true;
+            txtPrecoTotal.Hint = "Preço total";
+            txtPrecoTotal.LeadingIcon = null;
+            txtPrecoTotal.Location = new Point(326, 73);
+            txtPrecoTotal.MaxLength = 32767;
+            txtPrecoTotal.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            txtPrecoTotal.Name = "txtPrecoTotal";
+            txtPrecoTotal.PasswordChar = '\0';
+            txtPrecoTotal.PrefixSuffixText = null;
+            txtPrecoTotal.ReadOnly = false;
+            txtPrecoTotal.RightToLeft = RightToLeft.No;
+            txtPrecoTotal.SelectedText = "";
+            txtPrecoTotal.SelectionLength = 0;
+            txtPrecoTotal.SelectionStart = 0;
+            txtPrecoTotal.ShortcutsEnabled = true;
+            txtPrecoTotal.Size = new Size(238, 48);
+            txtPrecoTotal.TabIndex = 3;
+            txtPrecoTotal.TabStop = false;
+            txtPrecoTotal.TextAlign = HorizontalAlignment.Left;
+            txtPrecoTotal.TrailingIcon = null;
+            txtPrecoTotal.UseSystemPasswordChar = false;
+            // 
+            // btnAdd
+            // 
+            btnAdd.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btnAdd.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
+            btnAdd.Depth = 0;
+            btnAdd.HighEmphasis = true;
+            btnAdd.Icon = null;
+            btnAdd.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
+            btnAdd.Location = new Point(585, 25);
+            btnAdd.Margin = new Padding(4, 6, 4, 6);
+            btnAdd.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            btnAdd.Name = "btnAdd";
+            btnAdd.NoAccentTextColor = Color.Empty;
+            btnAdd.Size = new Size(98, 36);
+            btnAdd.TabIndex = 4;
+            btnAdd.Text = "Adicionar";
+            btnAdd.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
+            btnAdd.UseAccentColor = false;
+            btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += btnAdd_Click;
+            // 
+            // dataGridViewItens
+            // 
+            dataGridViewItens.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewItens.Location = new Point(6, 130);
+            dataGridViewItens.MultiSelect = false;
+            dataGridViewItens.Name = "dataGridViewItens";
+            dataGridViewItens.ReadOnly = true;
+            dataGridViewItens.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridViewItens.Size = new Size(766, 276);
+            dataGridViewItens.TabIndex = 5;
+            // 
+            // txtDiarias
+            // 
+            txtDiarias.AnimateReadOnly = false;
+            txtDiarias.AutoCompleteMode = AutoCompleteMode.None;
+            txtDiarias.AutoCompleteSource = AutoCompleteSource.None;
+            txtDiarias.BackgroundImageLayout = ImageLayout.None;
+            txtDiarias.CharacterCasing = CharacterCasing.Normal;
+            txtDiarias.Depth = 0;
+            txtDiarias.Enabled = false;
+            txtDiarias.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtDiarias.HideSelection = true;
+            txtDiarias.Hint = "Diarias";
+            txtDiarias.LeadingIcon = null;
+            txtDiarias.Location = new Point(326, 19);
+            txtDiarias.MaxLength = 32767;
+            txtDiarias.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            txtDiarias.Name = "txtDiarias";
+            txtDiarias.PasswordChar = '\0';
+            txtDiarias.PrefixSuffixText = null;
+            txtDiarias.ReadOnly = false;
+            txtDiarias.RightToLeft = RightToLeft.No;
+            txtDiarias.SelectedText = "";
+            txtDiarias.SelectionLength = 0;
+            txtDiarias.SelectionStart = 0;
+            txtDiarias.ShortcutsEnabled = true;
+            txtDiarias.Size = new Size(238, 48);
+            txtDiarias.TabIndex = 6;
+            txtDiarias.TabStop = false;
+            txtDiarias.TextAlign = HorizontalAlignment.Left;
+            txtDiarias.TrailingIcon = null;
+            txtDiarias.UseSystemPasswordChar = false;
+            txtDiarias.KeyPress += txtDiarias_KeyPress;
+            txtDiarias.Leave += txtDiarias_Leave;
+            // 
+            // cboCategoria
+            // 
+            cboCategoria.AutoResize = false;
+            cboCategoria.BackColor = Color.FromArgb(255, 255, 255);
+            cboCategoria.Depth = 0;
+            cboCategoria.DrawMode = DrawMode.OwnerDrawVariable;
+            cboCategoria.DropDownHeight = 174;
+            cboCategoria.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboCategoria.DropDownWidth = 121;
+            cboCategoria.Enabled = false;
+            cboCategoria.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            cboCategoria.ForeColor = Color.FromArgb(222, 0, 0, 0);
+            cboCategoria.FormattingEnabled = true;
+            cboCategoria.Hint = "Categoria";
+            cboCategoria.IntegralHeight = false;
+            cboCategoria.ItemHeight = 43;
+            cboCategoria.Location = new Point(82, 19);
+            cboCategoria.MaxDropDownItems = 4;
+            cboCategoria.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            cboCategoria.Name = "cboCategoria";
+            cboCategoria.Size = new Size(238, 49);
+            cboCategoria.StartIndex = 0;
+            cboCategoria.TabIndex = 7;
+            // 
+            // btnExcluir
+            // 
+            btnExcluir.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btnExcluir.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
+            btnExcluir.Depth = 0;
+            btnExcluir.HighEmphasis = true;
+            btnExcluir.Icon = null;
+            btnExcluir.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
+            btnExcluir.Location = new Point(595, 73);
+            btnExcluir.Margin = new Padding(4, 6, 4, 6);
+            btnExcluir.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            btnExcluir.Name = "btnExcluir";
+            btnExcluir.NoAccentTextColor = Color.Empty;
+            btnExcluir.Size = new Size(79, 36);
+            btnExcluir.TabIndex = 8;
+            btnExcluir.Text = "Apagar";
+            btnExcluir.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
+            btnExcluir.UseAccentColor = false;
+            btnExcluir.UseVisualStyleBackColor = true;
+            btnExcluir.Click += btnExcluir_Click;
+            // 
+            // groupBoxItens
+            // 
+            groupBoxItens.Controls.Add(btnExcluir);
+            groupBoxItens.Controls.Add(cboCategoria);
+            groupBoxItens.Controls.Add(txtDiarias);
+            groupBoxItens.Controls.Add(dataGridViewItens);
+            groupBoxItens.Controls.Add(btnAdd);
+            groupBoxItens.Controls.Add(txtPrecoTotal);
+            groupBoxItens.Controls.Add(txtPreco);
+            groupBoxItens.Location = new Point(6, 115);
+            groupBoxItens.Name = "groupBoxItens";
+            groupBoxItens.Size = new Size(778, 438);
+            groupBoxItens.TabIndex = 7;
+            groupBoxItens.TabStop = false;
+            groupBoxItens.Text = "Detalhes da locação";
+            // 
+            // LocacaoForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(802, 702);
             Location = new Point(0, 0);
-            Name = "SaleForm";
+            Name = "LocacaoForm";
             Text = "Aluguel de veiculos";
-            Load += SaleForm_Load;
             tabControlRegister.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewItens).EndInit();
             groupBoxItens.ResumeLayout(false);
             groupBoxItens.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewItens).EndInit();
             ResumeLayout(false);
         }
 
@@ -501,17 +508,17 @@
         private ReaLTaiizor.Controls.MaterialMaskedTextBox txtDataLocacao;
         private ReaLTaiizor.Controls.MaterialComboBox cboCliente;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtId;
+        private ReaLTaiizor.Controls.MaterialComboBox cboCarro;
+        private ReaLTaiizor.Controls.MaterialLabel lblTotalPrice;
+        private ReaLTaiizor.Controls.MaterialLabel lblQtdItens;
+        private ReaLTaiizor.Controls.MaterialMaskedTextBox txtDataDevolucao;
         private GroupBox groupBoxItens;
+        private ReaLTaiizor.Controls.MaterialButton btnExcluir;
+        private ReaLTaiizor.Controls.MaterialComboBox cboCategoria;
+        private ReaLTaiizor.Controls.MaterialTextBoxEdit txtDiarias;
+        private DataGridView dataGridViewItens;
         private ReaLTaiizor.Controls.MaterialButton btnAdd;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtPrecoTotal;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtPreco;
-        private ReaLTaiizor.Controls.MaterialComboBox cboCarro;
-        private DataGridView dataGridViewItens;
-        private ReaLTaiizor.Controls.MaterialLabel lblTotalPrice;
-        private ReaLTaiizor.Controls.MaterialLabel lblQtdItens;
-        private ReaLTaiizor.Controls.MaterialTextBoxEdit txtDiarias;
-        private ReaLTaiizor.Controls.MaterialComboBox cboCategoria;
-        private ReaLTaiizor.Controls.MaterialButton btnExcluir;
-        private ReaLTaiizor.Controls.MaterialMaskedTextBox txtDataDevolucao;
     }
 }

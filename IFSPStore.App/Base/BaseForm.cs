@@ -158,6 +158,7 @@ namespace IFSPStore.App.Base
             }
         }
 
+        //deletar com a tecla delete
         private void dataGridViewList_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Delete)

@@ -122,7 +122,7 @@
             txtDataLocacao.TrailingIcon = null;
             txtDataLocacao.UseSystemPasswordChar = false;
             txtDataLocacao.ValidatingType = null;
-            txtDataLocacao.Leave += this.CalcularDiarias;
+            txtDataLocacao.Leave += txtDataLocacao_Leave;
             // 
             // cboFuncionario
             // 
@@ -292,7 +292,7 @@
             txtDataDevolucao.TrailingIcon = null;
             txtDataDevolucao.UseSystemPasswordChar = false;
             txtDataDevolucao.ValidatingType = null;
-            txtDataDevolucao.Leave += this.CalcularDiarias;
+            txtDataDevolucao.Leave += txtDataLocacao_Leave;
             // 
             // txtPreco
             // 

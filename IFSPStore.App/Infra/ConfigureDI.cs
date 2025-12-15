@@ -72,8 +72,9 @@ namespace IFSPStore.App.Infra
                     config.CreateMap<Cidade, CidadeModel>();
                     config.CreateMap<Locacao, LocacaoModel>()
                         .ForMember(d => d.Funcionario, d => d.MapFrom(x => x.Funcionario!.Nome)) //se aparecer no datagridview domain entities e isso
-                        .ForMember(d => d.Cliente, d => d.MapFrom(x => x.Cliente!.Nome));    
-                    config.CreateMap<CarrosAlugados, CarrosAlugadosModel>();
+                        .ForMember(d => d.Cliente, d => d.MapFrom(x => x.Cliente!.Nome));    // model -> entidad
+                    config.CreateMap<CarrosAlugados, CarrosAlugadosModel>()
+                        .ForMember(d => d.CarroNome, d => d.MapFrom(x => x.Carro!.Nome));
 
                     config.CreateMap<Funcionario, Funcionario>();        
                     config.CreateMap<Categoria, Categoria>(); 

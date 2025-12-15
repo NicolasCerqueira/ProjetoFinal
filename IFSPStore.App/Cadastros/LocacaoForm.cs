@@ -189,7 +189,8 @@ namespace IFSPStore.App.Cadastros
                     CarroId = item.CarroId,
                     ValorDiaria = item.ValorDiaria,
                     Quantidade = item.Quantidade,
-                    ValorTotalLoc = item.ValorTotalLoc
+                    ValorTotalLoc = item.ValorTotalLoc,
+                    CarroNome = item.Carro?.Nome
                 };
                 itemModel.Carro = item.Carro;
 
@@ -211,9 +212,10 @@ namespace IFSPStore.App.Cadastros
             dataGridViewItens.Columns["ValorDiaria"].HeaderText = "Valor Diária";
             dataGridViewItens.Columns["ValorDiaria"].DefaultCellStyle.Format = "C2";
 
-            dataGridViewItens.Columns["ValorTotalLoc"].DefaultCellStyle.Format = "C2";
+            dataGridViewItens.Columns["ValorTotalLoc"].DefaultCellStyle.Format = "C0";
 
-            dataGridViewItens.Columns["Quantidade"].HeaderText = "Diarias"; //mudar no model depois 
+            dataGridViewItens.Columns["Quantidade"].HeaderText = "Diarias"; //mudar no model depois
+            dataGridViewItens.Columns["ValorTotalLoc"].HeaderText = "Valor total da locação";
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -398,7 +400,7 @@ namespace IFSPStore.App.Cadastros
 
             return true; 
         }
-        private void CalcularDiarias()
+        private void txtDataLocacao_Leave(object sender, EventArgs e)
         {
             DateTime.TryParse(txtDataLocacao.Text, out var dataInicio);
             DateTime.TryParse(txtDataDevolucao.Text, out var dataFim);

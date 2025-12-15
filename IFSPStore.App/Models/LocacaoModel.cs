@@ -22,6 +22,7 @@ namespace IFSPStore.App.Models
         public virtual Locacao? Locacao_ { get; set; }
         public int CarroId { get; set; }
         public virtual Carro? Carro { get; set; }
+        public string? CarroNome { get; set; }
         public decimal ValorDiaria { get; set; }
         public decimal ValorTotalLoc { get; set; }
         public decimal Quantidade { get; set; }

@@ -59,5 +59,15 @@ namespace IFSPStore.App.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LogoDriveNow {
+            get {
+                object obj = ResourceManager.GetObject("LogoDriveNow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

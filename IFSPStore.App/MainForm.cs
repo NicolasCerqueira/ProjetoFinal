@@ -4,6 +4,8 @@ using IFSPStore.App.Outros;
 using IFSPStore.Domain.Entities;
 using Microsoft.Extensions.DependencyInjection;
 using ReaLTaiizor.Forms;
+using ReaLTaiizor.Manager;
+using ReaLTaiizor.Colors;
 
 namespace IFSPStore.App
 {
@@ -14,6 +16,35 @@ namespace IFSPStore.App
         {
             InitializeComponent();
             loadLogin();
+            foreach (Control ctl in this.Controls)
+            {
+                
+                if (ctl is MdiClient mdiClient)
+                {
+                    mdiClient.BackColor = Color.LightGreen;
+                    mdiClient.BackgroundImage = Properties.Resources.LogoDriveNow;
+
+                    break;
+                }
+            }
+        }
+        private void tema()
+        {
+            var materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+
+            //tema dark
+            materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
+
+            // Define a paleta de cores
+            materialSkinManager.ColorScheme = new ColorScheme(
+                Primary.Green900,        // Cor Primária (Barra de Título): Verde bem escuro
+                Primary.Grey900,         // Cor Primária Escura (Barra de Status): Quase preto
+                Primary.Green500,        // Cor Primária Clara: Um verde médio para detalhes
+                Accent.LightGreen400,    // cor dos botoes
+                TextShade.WHITE          // Texto Branco 
+            );
+            // ---------------------------------------------------------
         }
         private void loadLogin()
         {

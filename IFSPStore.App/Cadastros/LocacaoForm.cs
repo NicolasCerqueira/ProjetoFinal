@@ -420,6 +420,8 @@ namespace IFSPStore.App.Cadastros
         {
             var calendario = new CalendarioForm();
             {
+                calendario.LimitaData = true;
+                calendario.LimitadorData();
                 if (calendario.ShowDialog() == DialogResult.OK)//trava o resto
                 {
                     txtDataLocacao.Text = calendario.DataSelecionada;
@@ -431,6 +433,8 @@ namespace IFSPStore.App.Cadastros
         {
             var calendario = new CalendarioForm();
             {
+                calendario.LimitaData = true;
+                calendario.LimitadorData();
                 if (calendario.ShowDialog() == DialogResult.OK)
                 {
                     txtDataDevolucao.Text = calendario.DataSelecionada;

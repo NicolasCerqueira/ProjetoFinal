@@ -163,6 +163,8 @@ namespace IFSPStore.App.Cadastros
         {
             var calendario = new CalendarioForm();
             {
+                calendario.LimitaData = false;
+                calendario.LimitadorData();
                 if (calendario.ShowDialog() == DialogResult.OK)
                 {
                     txtDataAquisicao.Text = calendario.DataSelecionada;

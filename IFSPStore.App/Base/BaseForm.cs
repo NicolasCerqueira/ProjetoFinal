@@ -1,5 +1,6 @@
 ﻿using ReaLTaiizor.Controls;
 using ReaLTaiizor.Forms;
+using ReaLTaiizor.Manager;
 namespace IFSPStore.App.Base
 {
     public partial class BaseForm : MaterialForm
@@ -11,8 +12,22 @@ namespace IFSPStore.App.Base
         public BaseForm()
         {
             InitializeComponent();
+            tema();
         }
         #endregion
+        private void tema()
+        {
+            var materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
+
+            dataGridViewList.DefaultCellStyle.ForeColor = Color.Black;
+
+            
+            dataGridViewList.DefaultCellStyle.BackColor = Color.White;
+            dataGridViewList.DefaultCellStyle.SelectionForeColor = Color.White; // Texto branco ao selecionar
+            dataGridViewList.DefaultCellStyle.SelectionBackColor = Color.Blue;  // Fundo azul ao selecionar
+        }
         #region Eventos form
         private void btnCancel_Click(object sender, EventArgs e)
         {

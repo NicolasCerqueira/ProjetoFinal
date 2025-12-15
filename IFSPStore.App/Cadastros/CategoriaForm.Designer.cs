@@ -49,6 +49,7 @@
             txtNome.AnimateReadOnly = false;
             txtNome.AutoCompleteMode = AutoCompleteMode.None;
             txtNome.AutoCompleteSource = AutoCompleteSource.None;
+            txtNome.BackColor = Color.FromArgb(50, 50, 50);
             txtNome.BackgroundImageLayout = ImageLayout.None;
             txtNome.CharacterCasing = CharacterCasing.Normal;
             txtNome.Depth = 0;
@@ -80,6 +81,7 @@
             txtId.AnimateReadOnly = false;
             txtId.AutoCompleteMode = AutoCompleteMode.None;
             txtId.AutoCompleteSource = AutoCompleteSource.None;
+            txtId.BackColor = Color.FromArgb(50, 50, 50);
             txtId.BackgroundImageLayout = ImageLayout.None;
             txtId.CharacterCasing = CharacterCasing.Normal;
             txtId.Depth = 0;
@@ -112,6 +114,7 @@
             txtDescrição.AnimateReadOnly = false;
             txtDescrição.AutoCompleteMode = AutoCompleteMode.None;
             txtDescrição.AutoCompleteSource = AutoCompleteSource.None;
+            txtDescrição.BackColor = Color.FromArgb(50, 50, 50);
             txtDescrição.BackgroundImageLayout = ImageLayout.None;
             txtDescrição.CharacterCasing = CharacterCasing.Normal;
             txtDescrição.Depth = 0;

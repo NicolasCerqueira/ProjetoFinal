@@ -2,6 +2,7 @@
 using IFSPStore.Domain.Entities;
 using IFSPStore.Service.Validator;
 using ReaLTaiizor.Forms;
+using ReaLTaiizor.Manager;
 using System.Data;
 namespace IFSPStore.App.Outros
 {
@@ -12,6 +13,7 @@ namespace IFSPStore.App.Outros
         {
             _usuarioServico = usuarioServico;
             InitializeComponent();
+            tema();
             this.AcceptButton = btnLogin;
         }
 
@@ -77,6 +79,12 @@ namespace IFSPStore.App.Outros
         private void btnCancel_Click(object sender, EventArgs e)
         {
             Environment.Exit(0);
+        }
+        private void tema()
+        {
+            var materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
         }
     }
 }

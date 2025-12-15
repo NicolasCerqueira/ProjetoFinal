@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             txtDataLocacao = new ReaLTaiizor.Controls.MaterialMaskedTextBox();
             cboFuncionario = new ReaLTaiizor.Controls.MaterialComboBox();
             txtId = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
@@ -85,6 +87,7 @@
             txtDataLocacao.AllowPromptAsInput = true;
             txtDataLocacao.AnimateReadOnly = false;
             txtDataLocacao.AsciiOnly = false;
+            txtDataLocacao.BackColor = Color.FromArgb(50, 50, 50);
             txtDataLocacao.BackgroundImageLayout = ImageLayout.None;
             txtDataLocacao.BeepOnError = false;
             txtDataLocacao.CutCopyMaskFormat = MaskFormat.IncludeLiterals;
@@ -127,14 +130,14 @@
             // cboFuncionario
             // 
             cboFuncionario.AutoResize = false;
-            cboFuncionario.BackColor = Color.FromArgb(255, 255, 255);
+            cboFuncionario.BackColor = Color.FromArgb(50, 50, 50);
             cboFuncionario.Depth = 0;
             cboFuncionario.DrawMode = DrawMode.OwnerDrawVariable;
             cboFuncionario.DropDownHeight = 174;
             cboFuncionario.DropDownStyle = ComboBoxStyle.DropDownList;
             cboFuncionario.DropDownWidth = 121;
             cboFuncionario.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
-            cboFuncionario.ForeColor = Color.FromArgb(222, 0, 0, 0);
+            cboFuncionario.ForeColor = Color.FromArgb(222, 255, 255, 255);
             cboFuncionario.FormattingEnabled = true;
             cboFuncionario.Hint = "Funcionario";
             cboFuncionario.IntegralHeight = false;
@@ -152,6 +155,7 @@
             txtId.AnimateReadOnly = false;
             txtId.AutoCompleteMode = AutoCompleteMode.None;
             txtId.AutoCompleteSource = AutoCompleteSource.None;
+            txtId.BackColor = Color.FromArgb(50, 50, 50);
             txtId.BackgroundImageLayout = ImageLayout.None;
             txtId.CharacterCasing = CharacterCasing.Normal;
             txtId.Depth = 0;
@@ -182,14 +186,14 @@
             // cboCliente
             // 
             cboCliente.AutoResize = false;
-            cboCliente.BackColor = Color.FromArgb(255, 255, 255);
+            cboCliente.BackColor = Color.FromArgb(50, 50, 50);
             cboCliente.Depth = 0;
             cboCliente.DrawMode = DrawMode.OwnerDrawVariable;
             cboCliente.DropDownHeight = 174;
             cboCliente.DropDownStyle = ComboBoxStyle.DropDownList;
             cboCliente.DropDownWidth = 121;
             cboCliente.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
-            cboCliente.ForeColor = Color.FromArgb(222, 0, 0, 0);
+            cboCliente.ForeColor = Color.FromArgb(222, 255, 255, 255);
             cboCliente.FormattingEnabled = true;
             cboCliente.Hint = "Cliente";
             cboCliente.IntegralHeight = false;
@@ -205,14 +209,14 @@
             // cboCarro
             // 
             cboCarro.AutoResize = false;
-            cboCarro.BackColor = Color.FromArgb(255, 255, 255);
+            cboCarro.BackColor = Color.FromArgb(50, 50, 50);
             cboCarro.Depth = 0;
             cboCarro.DrawMode = DrawMode.OwnerDrawVariable;
             cboCarro.DropDownHeight = 174;
             cboCarro.DropDownStyle = ComboBoxStyle.DropDownList;
             cboCarro.DropDownWidth = 121;
             cboCarro.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
-            cboCarro.ForeColor = Color.FromArgb(222, 0, 0, 0);
+            cboCarro.ForeColor = Color.FromArgb(222, 255, 255, 255);
             cboCarro.FormattingEnabled = true;
             cboCarro.Hint = "Carro";
             cboCarro.IntegralHeight = false;
@@ -229,8 +233,10 @@
             // lblQtdItens
             // 
             lblQtdItens.AutoSize = true;
+            lblQtdItens.BackColor = Color.FromArgb(50, 50, 50);
             lblQtdItens.Depth = 0;
             lblQtdItens.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lblQtdItens.ForeColor = Color.FromArgb(222, 255, 255, 255);
             lblQtdItens.Location = new Point(12, 524);
             lblQtdItens.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             lblQtdItens.Name = "lblQtdItens";
@@ -241,8 +247,10 @@
             // lblTotalPrice
             // 
             lblTotalPrice.AutoSize = true;
+            lblTotalPrice.BackColor = Color.FromArgb(50, 50, 50);
             lblTotalPrice.Depth = 0;
             lblTotalPrice.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lblTotalPrice.ForeColor = Color.FromArgb(222, 255, 255, 255);
             lblTotalPrice.Location = new Point(352, 524);
             lblTotalPrice.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             lblTotalPrice.Name = "lblTotalPrice";
@@ -255,6 +263,7 @@
             txtDataDevolucao.AllowPromptAsInput = true;
             txtDataDevolucao.AnimateReadOnly = false;
             txtDataDevolucao.AsciiOnly = false;
+            txtDataDevolucao.BackColor = Color.FromArgb(50, 50, 50);
             txtDataDevolucao.BackgroundImageLayout = ImageLayout.None;
             txtDataDevolucao.BeepOnError = false;
             txtDataDevolucao.CutCopyMaskFormat = MaskFormat.IncludeLiterals;
@@ -299,6 +308,7 @@
             txtPreco.AnimateReadOnly = false;
             txtPreco.AutoCompleteMode = AutoCompleteMode.None;
             txtPreco.AutoCompleteSource = AutoCompleteSource.None;
+            txtPreco.BackColor = Color.FromArgb(50, 50, 50);
             txtPreco.BackgroundImageLayout = ImageLayout.None;
             txtPreco.CharacterCasing = CharacterCasing.Normal;
             txtPreco.Depth = 0;
@@ -331,6 +341,7 @@
             txtPrecoTotal.AnimateReadOnly = false;
             txtPrecoTotal.AutoCompleteMode = AutoCompleteMode.None;
             txtPrecoTotal.AutoCompleteSource = AutoCompleteSource.None;
+            txtPrecoTotal.BackColor = Color.FromArgb(50, 50, 50);
             txtPrecoTotal.BackgroundImageLayout = ImageLayout.None;
             txtPrecoTotal.CharacterCasing = CharacterCasing.Normal;
             txtPrecoTotal.Depth = 0;
@@ -361,8 +372,10 @@
             // btnAdd
             // 
             btnAdd.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btnAdd.BackColor = Color.FromArgb(50, 50, 50);
             btnAdd.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
             btnAdd.Depth = 0;
+            btnAdd.ForeColor = Color.FromArgb(222, 255, 255, 255);
             btnAdd.HighEmphasis = true;
             btnAdd.Icon = null;
             btnAdd.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
@@ -376,12 +389,29 @@
             btnAdd.Text = "Adicionar";
             btnAdd.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
             btnAdd.UseAccentColor = false;
-            btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.UseVisualStyleBackColor = false;
             btnAdd.Click += btnAdd_Click;
             // 
             // dataGridViewItens
             // 
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridViewItens.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewItens.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            dataGridViewCellStyle2.ForeColor = Color.FromArgb(222, 255, 255, 255);
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dataGridViewItens.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewItens.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
             dataGridViewItens.Location = new Point(6, 130);
             dataGridViewItens.MultiSelect = false;
             dataGridViewItens.Name = "dataGridViewItens";
@@ -395,6 +425,7 @@
             txtDiarias.AnimateReadOnly = false;
             txtDiarias.AutoCompleteMode = AutoCompleteMode.None;
             txtDiarias.AutoCompleteSource = AutoCompleteSource.None;
+            txtDiarias.BackColor = Color.FromArgb(50, 50, 50);
             txtDiarias.BackgroundImageLayout = ImageLayout.None;
             txtDiarias.CharacterCasing = CharacterCasing.Normal;
             txtDiarias.Depth = 0;
@@ -427,7 +458,7 @@
             // cboCategoria
             // 
             cboCategoria.AutoResize = false;
-            cboCategoria.BackColor = Color.FromArgb(255, 255, 255);
+            cboCategoria.BackColor = Color.FromArgb(50, 50, 50);
             cboCategoria.Depth = 0;
             cboCategoria.DrawMode = DrawMode.OwnerDrawVariable;
             cboCategoria.DropDownHeight = 174;
@@ -435,7 +466,7 @@
             cboCategoria.DropDownWidth = 121;
             cboCategoria.Enabled = false;
             cboCategoria.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
-            cboCategoria.ForeColor = Color.FromArgb(222, 0, 0, 0);
+            cboCategoria.ForeColor = Color.FromArgb(222, 255, 255, 255);
             cboCategoria.FormattingEnabled = true;
             cboCategoria.Hint = "Categoria";
             cboCategoria.IntegralHeight = false;
@@ -451,8 +482,10 @@
             // btnExcluir
             // 
             btnExcluir.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btnExcluir.BackColor = Color.FromArgb(50, 50, 50);
             btnExcluir.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
             btnExcluir.Depth = 0;
+            btnExcluir.ForeColor = Color.FromArgb(222, 255, 255, 255);
             btnExcluir.HighEmphasis = true;
             btnExcluir.Icon = null;
             btnExcluir.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
@@ -466,11 +499,12 @@
             btnExcluir.Text = "Apagar";
             btnExcluir.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
             btnExcluir.UseAccentColor = false;
-            btnExcluir.UseVisualStyleBackColor = true;
+            btnExcluir.UseVisualStyleBackColor = false;
             btnExcluir.Click += btnExcluir_Click;
             // 
             // groupBoxItens
             // 
+            groupBoxItens.BackColor = Color.FromArgb(50, 50, 50);
             groupBoxItens.Controls.Add(btnExcluir);
             groupBoxItens.Controls.Add(cboCategoria);
             groupBoxItens.Controls.Add(txtDiarias);
@@ -478,6 +512,8 @@
             groupBoxItens.Controls.Add(btnAdd);
             groupBoxItens.Controls.Add(txtPrecoTotal);
             groupBoxItens.Controls.Add(txtPreco);
+            groupBoxItens.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            groupBoxItens.ForeColor = Color.FromArgb(222, 255, 255, 255);
             groupBoxItens.Location = new Point(6, 115);
             groupBoxItens.Name = "groupBoxItens";
             groupBoxItens.Size = new Size(778, 438);

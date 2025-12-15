@@ -5,7 +5,6 @@ using IFSPStore.Domain.Entities;
 using Microsoft.Extensions.DependencyInjection;
 using ReaLTaiizor.Forms;
 using ReaLTaiizor.Manager;
-using ReaLTaiizor.Colors;
 
 namespace IFSPStore.App
 {
@@ -16,35 +15,26 @@ namespace IFSPStore.App
         {
             InitializeComponent();
             loadLogin();
+            tema();
+        }
+        private void tema()
+        {
             foreach (Control ctl in this.Controls)
             {
-                
+
                 if (ctl is MdiClient mdiClient)
                 {
                     mdiClient.BackColor = Color.LightGreen;
-                    mdiClient.BackgroundImage = Properties.Resources.LogoDriveNow;
+                    mdiClient.BackgroundImage = Properties.Resources.DriveNow4k;
 
                     break;
                 }
             }
-        }
-        private void tema()
-        {
             var materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
 
             //tema dark
             materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
-
-            // Define a paleta de cores
-            materialSkinManager.ColorScheme = new ColorScheme(
-                Primary.Green900,        // Cor Primária (Barra de Título): Verde bem escuro
-                Primary.Grey900,         // Cor Primária Escura (Barra de Status): Quase preto
-                Primary.Green500,        // Cor Primária Clara: Um verde médio para detalhes
-                Accent.LightGreen400,    // cor dos botoes
-                TextShade.WHITE          // Texto Branco 
-            );
-            // ---------------------------------------------------------
         }
         private void loadLogin()
         {
@@ -106,6 +96,36 @@ namespace IFSPStore.App
         private void helpToolStripMenuItem_Click(object sender, EventArgs e)
         {
             showForm<HelpForm>();
+        }
+
+        private void btnFuncionario_Click(object sender, EventArgs e)
+        {
+            showForm<FuncionarioForm>();
+        }
+
+        private void btnCliente_Click(object sender, EventArgs e)
+        {
+            showForm<ClienteForm>();
+        }
+
+        private void btnCidade_Click(object sender, EventArgs e)
+        {
+            showForm<CidadeForm>();
+        }
+
+        private void btnCategoria_Click(object sender, EventArgs e)
+        {
+            showForm<CategoriaForm>();
+        }
+
+        private void btnCarro_Click(object sender, EventArgs e)
+        {
+            showForm<CarroForm>();
+        }
+
+        private void btnAluguel_Click(object sender, EventArgs e)
+        {
+            showForm<LocacaoForm>();
         }
 
         private void showForm<TFormulario>() where TFormulario : MaterialForm

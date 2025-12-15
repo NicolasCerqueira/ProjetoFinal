@@ -90,6 +90,7 @@
             // 
             // btnCancelar
             // 
+            btnCancelar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnCancelar.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             btnCancelar.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
             btnCancelar.Depth = 0;
@@ -225,6 +226,7 @@
             // 
             dataGridViewList.AllowUserToAddRows = false;
             dataGridViewList.AllowUserToDeleteRows = false;
+            dataGridViewList.BackgroundColor = SystemColors.ControlDarkDark;
             dataGridViewList.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewList.Location = new Point(1, 0);
             dataGridViewList.MultiSelect = false;

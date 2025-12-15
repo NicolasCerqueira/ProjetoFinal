@@ -88,6 +88,8 @@ namespace IFSPStore.App.Cadastros
             dataGridViewList.DataSource = usuarios;
             dataGridViewList.Columns["Senha"]!.Visible = false;
             dataGridViewList.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dataGridViewList.Columns["DataRegistro"].HeaderText = "Data de registro";
+            dataGridViewList.Columns["UltimoLogin"].HeaderText = "Ultimo login";
         }
 
         protected override void loadList(DataGridViewRow? linha)

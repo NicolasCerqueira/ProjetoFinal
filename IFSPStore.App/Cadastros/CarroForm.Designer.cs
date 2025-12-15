@@ -76,6 +76,7 @@
             txtNome.AnimateReadOnly = false;
             txtNome.AutoCompleteMode = AutoCompleteMode.None;
             txtNome.AutoCompleteSource = AutoCompleteSource.None;
+            txtNome.BackColor = Color.FromArgb(50, 50, 50);
             txtNome.BackgroundImageLayout = ImageLayout.None;
             txtNome.CharacterCasing = CharacterCasing.Normal;
             txtNome.Depth = 0;
@@ -107,6 +108,7 @@
             txtId.AnimateReadOnly = false;
             txtId.AutoCompleteMode = AutoCompleteMode.None;
             txtId.AutoCompleteSource = AutoCompleteSource.None;
+            txtId.BackColor = Color.FromArgb(50, 50, 50);
             txtId.BackgroundImageLayout = ImageLayout.None;
             txtId.CharacterCasing = CharacterCasing.Normal;
             txtId.Depth = 0;
@@ -137,14 +139,14 @@
             // cboCategoria
             // 
             cboCategoria.AutoResize = false;
-            cboCategoria.BackColor = Color.FromArgb(255, 255, 255);
+            cboCategoria.BackColor = Color.FromArgb(50, 50, 50);
             cboCategoria.Depth = 0;
             cboCategoria.DrawMode = DrawMode.OwnerDrawVariable;
             cboCategoria.DropDownHeight = 174;
             cboCategoria.DropDownStyle = ComboBoxStyle.DropDownList;
             cboCategoria.DropDownWidth = 121;
             cboCategoria.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
-            cboCategoria.ForeColor = Color.FromArgb(222, 0, 0, 0);
+            cboCategoria.ForeColor = Color.FromArgb(222, 255, 255, 255);
             cboCategoria.FormattingEnabled = true;
             cboCategoria.Hint = "Categoria";
             cboCategoria.IntegralHeight = false;
@@ -162,6 +164,7 @@
             txtPlaca.AnimateReadOnly = false;
             txtPlaca.AutoCompleteMode = AutoCompleteMode.None;
             txtPlaca.AutoCompleteSource = AutoCompleteSource.None;
+            txtPlaca.BackColor = Color.FromArgb(50, 50, 50);
             txtPlaca.BackgroundImageLayout = ImageLayout.None;
             txtPlaca.CharacterCasing = CharacterCasing.Normal;
             txtPlaca.Depth = 0;
@@ -193,6 +196,7 @@
             txtMarca.AnimateReadOnly = false;
             txtMarca.AutoCompleteMode = AutoCompleteMode.None;
             txtMarca.AutoCompleteSource = AutoCompleteSource.None;
+            txtMarca.BackColor = Color.FromArgb(50, 50, 50);
             txtMarca.BackgroundImageLayout = ImageLayout.None;
             txtMarca.CharacterCasing = CharacterCasing.Normal;
             txtMarca.Depth = 0;
@@ -224,6 +228,7 @@
             txtAno.AnimateReadOnly = false;
             txtAno.AutoCompleteMode = AutoCompleteMode.None;
             txtAno.AutoCompleteSource = AutoCompleteSource.None;
+            txtAno.BackColor = Color.FromArgb(50, 50, 50);
             txtAno.BackgroundImageLayout = ImageLayout.None;
             txtAno.CharacterCasing = CharacterCasing.Normal;
             txtAno.Depth = 0;
@@ -255,6 +260,7 @@
             txtCor.AnimateReadOnly = false;
             txtCor.AutoCompleteMode = AutoCompleteMode.None;
             txtCor.AutoCompleteSource = AutoCompleteSource.None;
+            txtCor.BackColor = Color.FromArgb(50, 50, 50);
             txtCor.BackgroundImageLayout = ImageLayout.None;
             txtCor.CharacterCasing = CharacterCasing.Normal;
             txtCor.Depth = 0;
@@ -286,6 +292,7 @@
             txtDataAquisicao.AllowPromptAsInput = true;
             txtDataAquisicao.AnimateReadOnly = false;
             txtDataAquisicao.AsciiOnly = false;
+            txtDataAquisicao.BackColor = Color.FromArgb(50, 50, 50);
             txtDataAquisicao.BackgroundImageLayout = ImageLayout.None;
             txtDataAquisicao.BeepOnError = false;
             txtDataAquisicao.CutCopyMaskFormat = MaskFormat.IncludeLiterals;
@@ -329,6 +336,7 @@
             txtDiaria.AllowPromptAsInput = true;
             txtDiaria.AnimateReadOnly = false;
             txtDiaria.AsciiOnly = false;
+            txtDiaria.BackColor = Color.FromArgb(50, 50, 50);
             txtDiaria.BackgroundImageLayout = ImageLayout.None;
             txtDiaria.BeepOnError = false;
             txtDiaria.CutCopyMaskFormat = MaskFormat.IncludeLiterals;
@@ -370,14 +378,14 @@
             // cboStatus
             // 
             cboStatus.AutoResize = false;
-            cboStatus.BackColor = Color.FromArgb(255, 255, 255);
+            cboStatus.BackColor = Color.FromArgb(50, 50, 50);
             cboStatus.Depth = 0;
             cboStatus.DrawMode = DrawMode.OwnerDrawVariable;
             cboStatus.DropDownHeight = 174;
             cboStatus.DropDownStyle = ComboBoxStyle.DropDownList;
             cboStatus.DropDownWidth = 121;
             cboStatus.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
-            cboStatus.ForeColor = Color.FromArgb(222, 0, 0, 0);
+            cboStatus.ForeColor = Color.FromArgb(222, 255, 255, 255);
             cboStatus.FormattingEnabled = true;
             cboStatus.Hint = "Status";
             cboStatus.IntegralHeight = false;
@@ -394,7 +402,9 @@
             // switch1
             // 
             switch1.AutoSize = true;
+            switch1.BackColor = Color.FromArgb(50, 50, 50);
             switch1.Depth = 0;
+            switch1.ForeColor = Color.FromArgb(222, 255, 255, 255);
             switch1.Location = new Point(603, 179);
             switch1.Margin = new Padding(0);
             switch1.MouseLocation = new Point(-1, -1);
@@ -405,19 +415,19 @@
             switch1.TabIndex = 24;
             switch1.Text = "Disponivel";
             switch1.UseAccentColor = false;
-            switch1.UseVisualStyleBackColor = true;
+            switch1.UseVisualStyleBackColor = false;
             // 
             // cboModelo
             // 
             cboModelo.AutoResize = false;
-            cboModelo.BackColor = Color.FromArgb(255, 255, 255);
+            cboModelo.BackColor = Color.FromArgb(50, 50, 50);
             cboModelo.Depth = 0;
             cboModelo.DrawMode = DrawMode.OwnerDrawVariable;
             cboModelo.DropDownHeight = 174;
             cboModelo.DropDownStyle = ComboBoxStyle.DropDownList;
             cboModelo.DropDownWidth = 121;
             cboModelo.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
-            cboModelo.ForeColor = Color.FromArgb(222, 0, 0, 0);
+            cboModelo.ForeColor = Color.FromArgb(222, 255, 255, 255);
             cboModelo.FormattingEnabled = true;
             cboModelo.Hint = "Modelo";
             cboModelo.IntegralHeight = false;

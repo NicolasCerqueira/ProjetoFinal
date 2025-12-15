@@ -160,6 +160,10 @@ namespace IFSPStore.App.Cadastros
 
             dataGridViewList.Columns["ValorTotal"].DefaultCellStyle.Format = "C2";
             dataGridViewList.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewList.Columns["DataLocacao"].HeaderText = "Data de locação";
+            dataGridViewList.Columns["DataDevolucao"].HeaderText = "Data de devolução";
+            dataGridViewList.Columns["ValorTotal"].HeaderText = "Valor Total";
+            dataGridViewList.Columns["NumDiarias"].HeaderText = "Número de diarias";
         }
         protected override void loadList(DataGridViewRow? linha)
         {
@@ -215,7 +219,8 @@ namespace IFSPStore.App.Cadastros
             dataGridViewItens.Columns["ValorTotalLoc"].DefaultCellStyle.Format = "C0";
 
             dataGridViewItens.Columns["Quantidade"].HeaderText = "Diarias"; //mudar no model depois
-            dataGridViewItens.Columns["ValorTotalLoc"].HeaderText = "Valor total da locação";
+            dataGridViewItens.Columns["ValorTotalLoc"].HeaderText = "Valor total da locação"; 
+            dataGridViewList.Columns["CarroNome"].HeaderText = "Nome do veiculo";
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -306,20 +311,6 @@ namespace IFSPStore.App.Cadastros
             {
                 MessageBox.Show("Selecione um item para remover.", "DriveNow", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-        }
-        private bool ValidarItem()
-        {
-            if (cboCarro.SelectedIndex == -1)
-            {
-                MessageBox.Show("Selecione um carro.", "DriveNow");
-                return false;
-            }
-            if (string.IsNullOrEmpty(txtDiarias.Text))
-            {
-                MessageBox.Show("Informe o número de diárias.", "DriveNow");
-                return false;
-            }
-            return true;
         }
         private void LimparCamposItem()
         {

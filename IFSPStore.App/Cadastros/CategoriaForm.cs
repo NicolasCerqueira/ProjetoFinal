@@ -85,7 +85,8 @@ namespace IFSPStore.App.Cadastros
                 dataGridViewList.DataSource = categorias;
                 //nome ocupa apenas o tamanho do texto
                 dataGridViewList.Columns["Nome"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                dataGridViewList.Columns["Descricao"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dataGridViewList.Columns["Descricao"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill; 
+                dataGridViewList.Columns["Descricao"].HeaderText = "Descrição";
 
             }
             catch (Exception ex)

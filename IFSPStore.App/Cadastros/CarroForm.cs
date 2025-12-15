@@ -132,8 +132,8 @@ namespace IFSPStore.App.Cadastros
             carros = _carroServico.Get<CarroModel>(new[] { "Categoria" }).ToList();
             dataGridViewList.DataSource = carros;
             dataGridViewList.Columns["Nome"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            if (dataGridViewList.Columns.Contains("CategoriaId"))
-                dataGridViewList.Columns["CategoriaId"].Visible = false;
+            dataGridViewList.Columns["CategoriaId"].Visible = false;
+            dataGridViewList.Columns["DataAquisicao"].HeaderText = "Data de aquisição";
         }
 
         protected override void loadList(DataGridViewRow? linha)

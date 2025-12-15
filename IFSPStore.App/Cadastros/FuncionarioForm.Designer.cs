@@ -65,6 +65,7 @@
             txtNome.AnimateReadOnly = false;
             txtNome.AutoCompleteMode = AutoCompleteMode.None;
             txtNome.AutoCompleteSource = AutoCompleteSource.None;
+            txtNome.BackColor = Color.FromArgb(50, 50, 50);
             txtNome.BackgroundImageLayout = ImageLayout.None;
             txtNome.CharacterCasing = CharacterCasing.Normal;
             txtNome.Depth = 0;
@@ -96,6 +97,7 @@
             txtId.AnimateReadOnly = false;
             txtId.AutoCompleteMode = AutoCompleteMode.None;
             txtId.AutoCompleteSource = AutoCompleteSource.None;
+            txtId.BackColor = Color.FromArgb(50, 50, 50);
             txtId.BackgroundImageLayout = ImageLayout.None;
             txtId.CharacterCasing = CharacterCasing.Normal;
             txtId.Depth = 0;
@@ -128,6 +130,7 @@
             txtUsuario.AnimateReadOnly = false;
             txtUsuario.AutoCompleteMode = AutoCompleteMode.None;
             txtUsuario.AutoCompleteSource = AutoCompleteSource.None;
+            txtUsuario.BackColor = Color.FromArgb(50, 50, 50);
             txtUsuario.BackgroundImageLayout = ImageLayout.None;
             txtUsuario.CharacterCasing = CharacterCasing.Normal;
             txtUsuario.Depth = 0;
@@ -159,6 +162,7 @@
             txtSenha.AnimateReadOnly = false;
             txtSenha.AutoCompleteMode = AutoCompleteMode.None;
             txtSenha.AutoCompleteSource = AutoCompleteSource.None;
+            txtSenha.BackColor = Color.FromArgb(50, 50, 50);
             txtSenha.BackgroundImageLayout = ImageLayout.None;
             txtSenha.CharacterCasing = CharacterCasing.Normal;
             txtSenha.Depth = 0;
@@ -190,6 +194,7 @@
             txtEmail.AnimateReadOnly = false;
             txtEmail.AutoCompleteMode = AutoCompleteMode.None;
             txtEmail.AutoCompleteSource = AutoCompleteSource.None;
+            txtEmail.BackColor = Color.FromArgb(50, 50, 50);
             txtEmail.BackgroundImageLayout = ImageLayout.None;
             txtEmail.CharacterCasing = CharacterCasing.Normal;
             txtEmail.Depth = 0;
@@ -221,6 +226,7 @@
             txtDataRegistro.AnimateReadOnly = false;
             txtDataRegistro.AutoCompleteMode = AutoCompleteMode.None;
             txtDataRegistro.AutoCompleteSource = AutoCompleteSource.None;
+            txtDataRegistro.BackColor = Color.FromArgb(50, 50, 50);
             txtDataRegistro.BackgroundImageLayout = ImageLayout.None;
             txtDataRegistro.CharacterCasing = CharacterCasing.Normal;
             txtDataRegistro.Depth = 0;
@@ -253,6 +259,7 @@
             txtUltimoLogin.AnimateReadOnly = false;
             txtUltimoLogin.AutoCompleteMode = AutoCompleteMode.None;
             txtUltimoLogin.AutoCompleteSource = AutoCompleteSource.None;
+            txtUltimoLogin.BackColor = Color.FromArgb(50, 50, 50);
             txtUltimoLogin.BackgroundImageLayout = ImageLayout.None;
             txtUltimoLogin.CharacterCasing = CharacterCasing.Normal;
             txtUltimoLogin.Depth = 0;
@@ -283,7 +290,9 @@
             // chkAtivo
             // 
             chkAtivo.AutoSize = true;
+            chkAtivo.BackColor = Color.FromArgb(50, 50, 50);
             chkAtivo.Depth = 0;
+            chkAtivo.ForeColor = Color.FromArgb(222, 255, 255, 255);
             chkAtivo.Location = new Point(622, 125);
             chkAtivo.Margin = new Padding(0);
             chkAtivo.MouseLocation = new Point(-1, -1);
@@ -294,7 +303,7 @@
             chkAtivo.TabIndex = 25;
             chkAtivo.Text = "Usuario ativo";
             chkAtivo.UseAccentColor = false;
-            chkAtivo.UseVisualStyleBackColor = true;
+            chkAtivo.UseVisualStyleBackColor = false;
             // 
             // FuncionarioForm
             // 

@@ -46,6 +46,7 @@
             cboCategoria = new ReaLTaiizor.Controls.MaterialComboBox();
             btnExcluir = new ReaLTaiizor.Controls.MaterialButton();
             groupBoxItens = new GroupBox();
+            txtCategoria = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             tabControlRegister.SuspendLayout();
             tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewItens).BeginInit();
@@ -411,7 +412,7 @@
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dataGridViewItens.DefaultCellStyle = dataGridViewCellStyle2;
-            dataGridViewItens.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            dataGridViewItens.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
             dataGridViewItens.Location = new Point(6, 130);
             dataGridViewItens.MultiSelect = false;
             dataGridViewItens.Name = "dataGridViewItens";
@@ -505,6 +506,7 @@
             // groupBoxItens
             // 
             groupBoxItens.BackColor = Color.FromArgb(50, 50, 50);
+            groupBoxItens.Controls.Add(txtCategoria);
             groupBoxItens.Controls.Add(btnExcluir);
             groupBoxItens.Controls.Add(cboCategoria);
             groupBoxItens.Controls.Add(txtDiarias);
@@ -512,7 +514,7 @@
             groupBoxItens.Controls.Add(btnAdd);
             groupBoxItens.Controls.Add(txtPrecoTotal);
             groupBoxItens.Controls.Add(txtPreco);
-            groupBoxItens.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            groupBoxItens.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
             groupBoxItens.ForeColor = Color.FromArgb(222, 255, 255, 255);
             groupBoxItens.Location = new Point(6, 115);
             groupBoxItens.Name = "groupBoxItens";
@@ -520,6 +522,39 @@
             groupBoxItens.TabIndex = 7;
             groupBoxItens.TabStop = false;
             groupBoxItens.Text = "Detalhes da locação";
+            // 
+            // txtCategoria
+            // 
+            txtCategoria.AnimateReadOnly = false;
+            txtCategoria.AutoCompleteMode = AutoCompleteMode.None;
+            txtCategoria.AutoCompleteSource = AutoCompleteSource.None;
+            txtCategoria.BackColor = Color.FromArgb(50, 50, 50);
+            txtCategoria.BackgroundImageLayout = ImageLayout.None;
+            txtCategoria.CharacterCasing = CharacterCasing.Normal;
+            txtCategoria.Depth = 0;
+            txtCategoria.Enabled = false;
+            txtCategoria.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtCategoria.HideSelection = true;
+            txtCategoria.Hint = "Categoria";
+            txtCategoria.LeadingIcon = null;
+            txtCategoria.Location = new Point(326, 130);
+            txtCategoria.MaxLength = 32767;
+            txtCategoria.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            txtCategoria.Name = "txtCategoria";
+            txtCategoria.PasswordChar = '\0';
+            txtCategoria.PrefixSuffixText = null;
+            txtCategoria.ReadOnly = false;
+            txtCategoria.RightToLeft = RightToLeft.No;
+            txtCategoria.SelectedText = "";
+            txtCategoria.SelectionLength = 0;
+            txtCategoria.SelectionStart = 0;
+            txtCategoria.ShortcutsEnabled = true;
+            txtCategoria.Size = new Size(238, 48);
+            txtCategoria.TabIndex = 9;
+            txtCategoria.TabStop = false;
+            txtCategoria.TextAlign = HorizontalAlignment.Left;
+            txtCategoria.TrailingIcon = null;
+            txtCategoria.UseSystemPasswordChar = false;
             // 
             // LocacaoForm
             // 
@@ -556,5 +591,6 @@
         private ReaLTaiizor.Controls.MaterialButton btnAdd;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtPrecoTotal;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtPreco;
+        private ReaLTaiizor.Controls.MaterialTextBoxEdit txtCategoria;
     }
 }

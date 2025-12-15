@@ -216,11 +216,11 @@ namespace IFSPStore.App.Cadastros
             dataGridViewItens.Columns["ValorDiaria"].HeaderText = "Valor Diária";
             dataGridViewItens.Columns["ValorDiaria"].DefaultCellStyle.Format = "C2";
 
-            dataGridViewItens.Columns["ValorTotalLoc"].DefaultCellStyle.Format = "C0";
+            dataGridViewItens.Columns["ValorTotalLoc"].DefaultCellStyle.Format = "C2";
 
             dataGridViewItens.Columns["Quantidade"].HeaderText = "Diarias"; //mudar no model depois
             dataGridViewItens.Columns["ValorTotalLoc"].HeaderText = "Valor total da locação"; 
-            dataGridViewList.Columns["CarroNome"].HeaderText = "Nome do veiculo";
+            dataGridViewItens.Columns["CarroNome"].HeaderText = "Nome do veiculo";
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -269,8 +269,8 @@ namespace IFSPStore.App.Cadastros
             var carroObj = _carroServico.GetById<Carro>(idCarro); // Busca o objeto completo para preencher o model
 
             item.CarroId = carroObj.Id;
-            item.Carro = carroObj; // Preenche objeto para exibir Nome/Placa na grid se necessário
-
+            item.Carro = carroObj; // Preenche objeto
+            item.CarroNome = cboCarro.Text;  
             // Preenche Quantidade (Diárias)
             if (decimal.TryParse(txtDiarias.Text, out var dias))
             {
@@ -357,7 +357,7 @@ namespace IFSPStore.App.Cadastros
             {
                 // preenche a diaria
                 txtPreco.Text = carro.Diaria.ToString("C2");
-
+                //txtCategoria.Text = carro.Categoria.ToString();
                 // Preenche a categoria
                 cboCategoria.SelectedValue = carro.CategoriaId;
 

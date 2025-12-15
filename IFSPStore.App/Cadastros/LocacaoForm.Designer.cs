@@ -411,7 +411,7 @@
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dataGridViewItens.DefaultCellStyle = dataGridViewCellStyle2;
-            dataGridViewItens.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            dataGridViewItens.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
             dataGridViewItens.Location = new Point(6, 130);
             dataGridViewItens.MultiSelect = false;
             dataGridViewItens.Name = "dataGridViewItens";
@@ -488,7 +488,7 @@
             groupBoxItens.Controls.Add(btnAdd);
             groupBoxItens.Controls.Add(txtPrecoTotal);
             groupBoxItens.Controls.Add(txtPreco);
-            groupBoxItens.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            groupBoxItens.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
             groupBoxItens.ForeColor = Color.FromArgb(222, 255, 255, 255);
             groupBoxItens.Location = new Point(6, 115);
             groupBoxItens.Name = "groupBoxItens";
@@ -550,13 +550,11 @@
         #endregion
 
         private ReaLTaiizor.Controls.MaterialComboBox cboFuncionario;
-        private ReaLTaiizor.Controls.MaterialMaskedTextBox txtDataLocacao;
         private ReaLTaiizor.Controls.MaterialComboBox cboCliente;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtId;
         private ReaLTaiizor.Controls.MaterialComboBox cboCarro;
         private ReaLTaiizor.Controls.MaterialLabel lblTotalPrice;
         private ReaLTaiizor.Controls.MaterialLabel lblQtdItens;
-        private ReaLTaiizor.Controls.MaterialMaskedTextBox txtDataDevolucao;
         private GroupBox groupBoxItens;
         private ReaLTaiizor.Controls.MaterialButton btnExcluir;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtDiarias;
@@ -565,5 +563,7 @@
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtPrecoTotal;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtPreco;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtCategoria;
+        public ReaLTaiizor.Controls.MaterialMaskedTextBox txtDataLocacao;
+        public ReaLTaiizor.Controls.MaterialMaskedTextBox txtDataDevolucao;
     }
 }

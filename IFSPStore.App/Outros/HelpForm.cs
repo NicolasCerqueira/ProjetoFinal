@@ -24,7 +24,7 @@ namespace IFSPStore.App.Outros
                 Process.Start(new ProcessStartInfo
                 {
                     FileName = url,
-                    UseShellExecute = true 
+                    UseShellExecute = true
                 });
             }
             catch (Exception ex)
@@ -32,4 +32,5 @@ namespace IFSPStore.App.Outros
                 MessageBox.Show($"Não foi possível abrir o WhatsApp: {ex.Message}");
             }
         }
+    }
 }

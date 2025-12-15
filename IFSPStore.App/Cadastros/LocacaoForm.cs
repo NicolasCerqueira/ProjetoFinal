@@ -54,9 +54,9 @@ namespace IFSPStore.App.Cadastros
             cboCarro.DataSource = _carroServico.Get<Carro>().ToList();
 
             //cboCategoria
-            cboCategoria.ValueMember = "Id";
-            cboCategoria.DisplayMember = "Nome";
-            cboCategoria.DataSource = _categoriaServico.Get<Categoria>().ToList();
+            //cboCategoria.ValueMember = "Id";
+            //cboCategoria.DisplayMember = "Nome";
+            //cboCategoria.DataSource = _categoriaServico.Get<Categoria>().ToList();
         }
         private void PreencheObject(Locacao locacao)
         {
@@ -318,7 +318,7 @@ namespace IFSPStore.App.Cadastros
             txtPreco.Text = "";
             txtPrecoTotal.Text = "";
             cboCarro.SelectedIndex = -1;
-            cboCategoria.SelectedIndex = -1;
+            //cboCategoria.SelectedIndex = -1;
         }
         private void txtDiarias_Leave(object sender, EventArgs e)
         {
@@ -357,9 +357,10 @@ namespace IFSPStore.App.Cadastros
             {
                 // preenche a diaria
                 txtPreco.Text = carro.Diaria.ToString("C2");
-                //txtCategoria.Text = carro.Categoria.ToString();
+                var categorria = _categoriaServico.GetById<Categoria>(carro.CategoriaId);
+                txtCategoria.Text = categorria.Nome;
                 // Preenche a categoria
-                cboCategoria.SelectedValue = carro.CategoriaId;
+                //cboCategoria.SelectedValue = carro.CategoriaId;
 
                 CalculateTotalItem();
             }

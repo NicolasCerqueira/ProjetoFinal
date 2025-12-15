@@ -1,4 +1,5 @@
 ﻿using ReaLTaiizor.Forms;
+using ReaLTaiizor.Manager;
 using System.Diagnostics;
 
 namespace IFSPStore.App.Outros
@@ -14,7 +15,7 @@ namespace IFSPStore.App.Outros
         private void btnContactWhatsApp_Click(object sender, EventArgs e)
         {
             string num = "5518981002171";
-            string msg = "Olá, preciso de ajuda com o IFSP Store.";
+            string msg = "Olá, preciso de ajuda com o DriveNow.";
 
             //monta a URL pro meu whatsApp
             string url = $"https://wa.me/{num}?text={Uri.EscapeDataString(msg)}";
@@ -31,5 +32,4 @@ namespace IFSPStore.App.Outros
                 MessageBox.Show($"Não foi possível abrir o WhatsApp: {ex.Message}");
             }
         }
-    }
 }

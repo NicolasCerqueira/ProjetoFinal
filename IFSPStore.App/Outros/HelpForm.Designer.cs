@@ -38,10 +38,12 @@
             // materialLabel1
             // 
             materialLabel1.AutoSize = true;
+            materialLabel1.BackColor = SystemColors.ActiveCaptionText;
             materialLabel1.Depth = 0;
             materialLabel1.FlatStyle = FlatStyle.Popup;
             materialLabel1.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel1.Location = new Point(89, 76);
+            materialLabel1.ForeColor = Color.Transparent;
+            materialLabel1.Location = new Point(109, 104);
             materialLabel1.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialLabel1.Name = "materialLabel1";
             materialLabel1.Size = new Size(177, 19);
@@ -51,9 +53,11 @@
             // materialLabel2
             // 
             materialLabel2.AutoSize = true;
+            materialLabel2.BackColor = SystemColors.ActiveCaptionText;
             materialLabel2.Depth = 0;
             materialLabel2.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel2.Location = new Point(79, 104);
+            materialLabel2.ForeColor = Color.Transparent;
+            materialLabel2.Location = new Point(99, 132);
             materialLabel2.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialLabel2.Name = "materialLabel2";
             materialLabel2.Size = new Size(203, 19);
@@ -63,9 +67,11 @@
             // materialLabel3
             // 
             materialLabel3.AutoSize = true;
+            materialLabel3.BackColor = SystemColors.ActiveCaptionText;
             materialLabel3.Depth = 0;
             materialLabel3.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel3.Location = new Point(65, 132);
+            materialLabel3.ForeColor = Color.Transparent;
+            materialLabel3.Location = new Point(85, 160);
             materialLabel3.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialLabel3.Name = "materialLabel3";
             materialLabel3.Size = new Size(239, 19);
@@ -75,9 +81,11 @@
             // materialLabel4
             // 
             materialLabel4.AutoSize = true;
+            materialLabel4.BackColor = SystemColors.ActiveCaptionText;
             materialLabel4.Depth = 0;
             materialLabel4.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel4.Location = new Point(94, 160);
+            materialLabel4.ForeColor = Color.Transparent;
+            materialLabel4.Location = new Point(114, 188);
             materialLabel4.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialLabel4.Name = "materialLabel4";
             materialLabel4.Size = new Size(172, 19);
@@ -92,7 +100,7 @@
             btnContactWhatsApp.HighEmphasis = true;
             btnContactWhatsApp.Icon = null;
             btnContactWhatsApp.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            btnContactWhatsApp.Location = new Point(134, 195);
+            btnContactWhatsApp.Location = new Point(144, 223);
             btnContactWhatsApp.Margin = new Padding(4, 6, 4, 6);
             btnContactWhatsApp.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             btnContactWhatsApp.Name = "btnContactWhatsApp";
@@ -109,12 +117,16 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(372, 282);
+            BackColor = SystemColors.ActiveCaptionText;
+            BackgroundImage = Properties.Resources.Valtemir_de_gorro_de_natal;
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(412, 318);
             Controls.Add(btnContactWhatsApp);
             Controls.Add(materialLabel4);
             Controls.Add(materialLabel3);
             Controls.Add(materialLabel2);
             Controls.Add(materialLabel1);
+            ForeColor = Color.Transparent;
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "HelpForm";

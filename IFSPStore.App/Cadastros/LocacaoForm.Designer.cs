@@ -43,7 +43,6 @@
             btnAdd = new ReaLTaiizor.Controls.MaterialButton();
             dataGridViewItens = new DataGridView();
             txtDiarias = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
-            cboCategoria = new ReaLTaiizor.Controls.MaterialComboBox();
             btnExcluir = new ReaLTaiizor.Controls.MaterialButton();
             groupBoxItens = new GroupBox();
             txtCategoria = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
@@ -412,7 +411,7 @@
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dataGridViewItens.DefaultCellStyle = dataGridViewCellStyle2;
-            dataGridViewItens.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            dataGridViewItens.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
             dataGridViewItens.Location = new Point(6, 130);
             dataGridViewItens.MultiSelect = false;
             dataGridViewItens.Name = "dataGridViewItens";
@@ -456,30 +455,6 @@
             txtDiarias.KeyPress += txtDiarias_KeyPress;
             txtDiarias.Leave += txtDiarias_Leave;
             // 
-            // cboCategoria
-            // 
-            cboCategoria.AutoResize = false;
-            cboCategoria.BackColor = Color.FromArgb(50, 50, 50);
-            cboCategoria.Depth = 0;
-            cboCategoria.DrawMode = DrawMode.OwnerDrawVariable;
-            cboCategoria.DropDownHeight = 174;
-            cboCategoria.DropDownStyle = ComboBoxStyle.DropDownList;
-            cboCategoria.DropDownWidth = 121;
-            cboCategoria.Enabled = false;
-            cboCategoria.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
-            cboCategoria.ForeColor = Color.FromArgb(222, 255, 255, 255);
-            cboCategoria.FormattingEnabled = true;
-            cboCategoria.Hint = "Categoria";
-            cboCategoria.IntegralHeight = false;
-            cboCategoria.ItemHeight = 43;
-            cboCategoria.Location = new Point(82, 19);
-            cboCategoria.MaxDropDownItems = 4;
-            cboCategoria.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            cboCategoria.Name = "cboCategoria";
-            cboCategoria.Size = new Size(238, 49);
-            cboCategoria.StartIndex = 0;
-            cboCategoria.TabIndex = 7;
-            // 
             // btnExcluir
             // 
             btnExcluir.AutoSizeMode = AutoSizeMode.GrowAndShrink;
@@ -508,13 +483,12 @@
             groupBoxItens.BackColor = Color.FromArgb(50, 50, 50);
             groupBoxItens.Controls.Add(txtCategoria);
             groupBoxItens.Controls.Add(btnExcluir);
-            groupBoxItens.Controls.Add(cboCategoria);
             groupBoxItens.Controls.Add(txtDiarias);
             groupBoxItens.Controls.Add(dataGridViewItens);
             groupBoxItens.Controls.Add(btnAdd);
             groupBoxItens.Controls.Add(txtPrecoTotal);
             groupBoxItens.Controls.Add(txtPreco);
-            groupBoxItens.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            groupBoxItens.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
             groupBoxItens.ForeColor = Color.FromArgb(222, 255, 255, 255);
             groupBoxItens.Location = new Point(6, 115);
             groupBoxItens.Name = "groupBoxItens";
@@ -537,7 +511,7 @@
             txtCategoria.HideSelection = true;
             txtCategoria.Hint = "Categoria";
             txtCategoria.LeadingIcon = null;
-            txtCategoria.Location = new Point(326, 130);
+            txtCategoria.Location = new Point(82, 19);
             txtCategoria.MaxLength = 32767;
             txtCategoria.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             txtCategoria.Name = "txtCategoria";
@@ -585,7 +559,6 @@
         private ReaLTaiizor.Controls.MaterialMaskedTextBox txtDataDevolucao;
         private GroupBox groupBoxItens;
         private ReaLTaiizor.Controls.MaterialButton btnExcluir;
-        private ReaLTaiizor.Controls.MaterialComboBox cboCategoria;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtDiarias;
         private DataGridView dataGridViewItens;
         private ReaLTaiizor.Controls.MaterialButton btnAdd;

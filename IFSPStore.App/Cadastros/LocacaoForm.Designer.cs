@@ -125,6 +125,8 @@
             txtDataLocacao.TrailingIcon = null;
             txtDataLocacao.UseSystemPasswordChar = false;
             txtDataLocacao.ValidatingType = null;
+            txtDataLocacao.Click += txtDataLocacao_Click;
+            txtDataLocacao.KeyDown += DeslligaTeclado;
             txtDataLocacao.Leave += txtDataLocacao_Leave;
             // 
             // cboFuncionario
@@ -301,6 +303,8 @@
             txtDataDevolucao.TrailingIcon = null;
             txtDataDevolucao.UseSystemPasswordChar = false;
             txtDataDevolucao.ValidatingType = null;
+            txtDataDevolucao.Click += txtDataDevolucao_Click;
+            txtDataDevolucao.KeyDown += DeslligaTeclado;
             txtDataDevolucao.Leave += txtDataLocacao_Leave;
             // 
             // txtPreco
@@ -411,7 +415,7 @@
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dataGridViewItens.DefaultCellStyle = dataGridViewCellStyle2;
-            dataGridViewItens.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            dataGridViewItens.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
             dataGridViewItens.Location = new Point(6, 130);
             dataGridViewItens.MultiSelect = false;
             dataGridViewItens.Name = "dataGridViewItens";
@@ -488,7 +492,7 @@
             groupBoxItens.Controls.Add(btnAdd);
             groupBoxItens.Controls.Add(txtPrecoTotal);
             groupBoxItens.Controls.Add(txtPreco);
-            groupBoxItens.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            groupBoxItens.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
             groupBoxItens.ForeColor = Color.FromArgb(222, 255, 255, 255);
             groupBoxItens.Location = new Point(6, 115);
             groupBoxItens.Name = "groupBoxItens";

@@ -158,5 +158,20 @@ namespace IFSPStore.App.Cadastros
                ? dataC.ToString("dd/MM/yyyy")
                : "";
         }
+
+        private void txtDataAquisicao_Click(object sender, EventArgs e)
+        {
+            var calendario = new CalendarioForm();
+            {
+                if (calendario.ShowDialog() == DialogResult.OK)
+                {
+                    txtDataAquisicao.Text = calendario.DataSelecionada;
+                }
+            }
+        }
+        private void DeslligaTeclado(object sender, KeyEventArgs e)
+        {
+            e.SuppressKeyPress = true; // Cancela a entrada do teclado
+        }
     }
 }

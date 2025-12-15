@@ -52,6 +52,7 @@
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "CalendarioForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Agendamento da locação";
             ResumeLayout(false);
         }

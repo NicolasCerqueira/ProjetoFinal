@@ -330,6 +330,8 @@
             txtDataAquisicao.TrailingIcon = null;
             txtDataAquisicao.UseSystemPasswordChar = false;
             txtDataAquisicao.ValidatingType = null;
+            txtDataAquisicao.Click += txtDataAquisicao_Click;
+            txtDataAquisicao.KeyDown += DeslligaTeclado;
             // 
             // txtDiaria
             // 

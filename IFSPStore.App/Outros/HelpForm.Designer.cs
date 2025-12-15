@@ -118,7 +118,6 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaptionText;
-            BackgroundImage = Properties.Resources.Valtemir_de_gorro_de_natal;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(412, 318);
             Controls.Add(btnContactWhatsApp);

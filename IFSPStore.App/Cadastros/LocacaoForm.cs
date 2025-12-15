@@ -415,6 +415,33 @@ namespace IFSPStore.App.Cadastros
 
             CalculateTotalItem();
         }
-        
+
+        private void txtDataLocacao_Click(object sender, EventArgs e)
+        {
+            var calendario = new CalendarioForm();
+            {
+                if (calendario.ShowDialog() == DialogResult.OK)//trava o resto
+                {
+                    txtDataLocacao.Text = calendario.DataSelecionada;
+                    txtDataLocacao_Leave(sender, e);//para funcionar a logica anterior
+                }
+            }
+        }
+        private void txtDataDevolucao_Click(object sender, EventArgs e)
+        {
+            var calendario = new CalendarioForm();
+            {
+                if (calendario.ShowDialog() == DialogResult.OK)
+                {
+                    txtDataDevolucao.Text = calendario.DataSelecionada;
+                    txtDataLocacao_Leave(sender, e);
+                }
+            }
+        }
+        private void DeslligaTeclado(object sender, KeyEventArgs e)
+        {
+            e.SuppressKeyPress = true; // Cancela a entrada do teclado
+        }
+
     }
 }
